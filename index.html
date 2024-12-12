@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyet.com</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
         }
         .video-container {
             position: relative;
-            height: 100vh;
+            height: 80vh;
             overflow: hidden;
         }
         .video-overlay {
@@ -30,10 +31,37 @@
         .section {
             min-height: 100vh;
             padding: 4rem 2rem;
+            position: relative;
         }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .scroll-indicator:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+        .scroll-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scroll-circle i {
+            color: #333;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -41,12 +69,17 @@
     <!-- Hero Section with Video -->
     <div class="video-container">
         <video autoplay muted loop class="w-full h-full object-cover">
-            <source src="/api/placeholder/1920/1080" type="video/mp4">
+            <source src="video.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
             <h1 class="text-6xl font-bold mb-4">Lyet</h1>
             <p class="text-2xl">Your Compelling Subtitle Here</p>
         </div>
+        <a href="#about" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
     </div>
 
     <!-- Navigation -->
@@ -68,6 +101,11 @@
                 <p>Your about content goes here. Tell your story and share what makes you unique.</p>
             </div>
         </div>
+        <a href="#gallery" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Gallery Section -->
@@ -86,6 +124,11 @@
                 </div>
             </div>
         </div>
+        <a href="#services" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Services Section -->
