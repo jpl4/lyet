@@ -271,18 +271,19 @@
                 <h3 class="text-2xl font-semibold mb-6">Historical Documents</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/dorothy_lyet_wedding_article.pdf" target="_blank" class="block relative">
+                        <a href="/assets/documents/dorothy_lyet_wedding_article.pdf" target="_blank" class="block relative group">
                             <img src="/api/placeholder/400/300" alt="Dorothy Lyet Wedding Article" class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity">
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">
-                                <p class="text-sm">Dorothy Lyet Wedding Article</p>
+                                <p class="text-sm font-medium">Dorothy Lyet Wedding Article</p>
                             </div>
                         </a>
                     </div>
-                    <div class="aspect-w-4 aspect-h-3">
-                        <img src="/api/placeholder/400/300" alt="Document 2" class="object-cover w-full h-full rounded-lg shadow-md">
+                    <!-- Placeholder for future documents -->
+                    <div class="aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+                        <p class="text-gray-500">More documents coming soon</p>
                     </div>
-                    <div class="aspect-w-4 aspect-h-3">
-                        <img src="/api/placeholder/400/300" alt="Document 3" class="object-cover w-full h-full rounded-lg shadow-md">
+                    <div class="aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+                        <p class="text-gray-500">More documents coming soon</p>
                     </div>
                 </div>
             </div>
@@ -290,7 +291,7 @@
             <!-- Videos Grid -->
             <div class="max-w-6xl mx-auto">
                 <h3 class="text-2xl font-semibold mb-6">Family Videos</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- First YouTube Embed -->
                     <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
                         <iframe 
@@ -316,7 +317,7 @@
                     </div>
 
                     <!-- Sperry Commercial -->
-                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md relative">
                         <video controls class="w-full h-full object-cover">
                             <source src="https://digital.hagley.org/islandora/object/islandora%3A2578820/datastream/MP4/view" type="video/mp4">
                             Your browser does not support the video tag.
@@ -325,11 +326,6 @@
                             <p class="text-sm font-medium">Sperry Commercial (1979)</p>
                             <p class="text-xs">Chairman J. Paul Lyet on the importance of listening</p>
                         </div>
-                    </div>
-
-                    <!-- Placeholder for fourth video -->
-                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md bg-gray-100 flex items-center justify-center">
-                        <p class="text-gray-500">Additional video coming soon</p>
                     </div>
                 </div>
             </div>
@@ -390,20 +386,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Historical Media Section -->
-    <section class="historical-media">
-        <h2>Historical Media</h2>
-        <div class="video-grid">
-            <!-- Existing videos... -->
-            
-            <div class="video-item">
-                <h3>Sperry Commercial (1979)</h3>
-                <p>Chairman J. Paul Lyet discusses the importance of listening in this Sperry Univac corporate campaign.</p>
-                <!-- Add video embed or link here once you have proper permissions -->
             </div>
         </div>
     </section>
