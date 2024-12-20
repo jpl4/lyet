@@ -81,6 +81,21 @@
                 padding-right: 0;
             }
         }
+
+        .aspect-w-85 {
+            position: relative;
+            padding-bottom: 129.4%; /* 11/8.5 * 100% */
+        }
+
+        .aspect-w-85 > * {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
@@ -334,12 +349,12 @@
                 <h3 class="text-2xl font-semibold mb-6">Historical Documents</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Forebears Map -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/001_forebears_map.png" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/001_forebears_map.png" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/001_forebears_map.png" 
                                 alt="Forebears Distribution Map" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">Global Distribution Map</p>
@@ -348,12 +363,12 @@
                     </div>
 
                     <!-- Forebears Legends -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/002_forebears_legends.png" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/002_forebears_legends.png" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/002_forebears_legends.png" 
                                 alt="Forebears Legends" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">Historical Legends</p>
@@ -362,12 +377,12 @@
                     </div>
 
                     <!-- France Map -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/003_map_lyet_france.png" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/003_map_lyet_france.png" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/003_map_lyet_france.png" 
                                 alt="Lyet France Map" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">French Distribution Map</p>
@@ -376,12 +391,12 @@
                     </div>
 
                     <!-- Dorothy Wedding Article -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/040_dorothy_lyet_wedding_article.jpg" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/040_dorothy_lyet_wedding_article.jpg" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/040_dorothy_lyet_wedding_article.jpg" 
                                 alt="Dorothy Lyet Wedding Article" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">Dorothy Lyet Wedding Article</p>
@@ -390,12 +405,12 @@
                     </div>
 
                     <!-- Sperry Rand -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/048_iving_in_at_sperry_rand.png" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/048_iving_in_at_sperry_rand.png" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/048_iving_in_at_sperry_rand.png" 
                                 alt="Living in at Sperry Rand" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">Living in at Sperry Rand</p>
@@ -404,12 +419,12 @@
                     </div>
 
                     <!-- Chairman Dies Article -->
-                    <div class="aspect-w-4 aspect-h-3">
-                        <a href="/assets/documents/049_jplyet_former_chairman_dies.png" target="_blank" class="block relative group">
+                    <div class="aspect-w-85 aspect-h-110 rounded-lg overflow-hidden shadow-md relative">
+                        <a href="/assets/documents/049_jplyet_former_chairman_dies.png" target="_blank" class="block relative group h-full">
                             <img 
                                 src="/assets/documents/049_jplyet_former_chairman_dies.png" 
                                 alt="J.P. Lyet Former Chairman Dies" 
-                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                                class="object-cover w-full h-full absolute inset-0"
                             >
                             <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">J.P. Lyet Former Chairman Dies</p>
