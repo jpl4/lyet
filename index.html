@@ -459,6 +459,62 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Maps Grid -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Historical Locations</h3>
+                
+                <!-- French Locations -->
+                <h4 class="text-xl font-semibold mb-4">France</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Osselle -->
+                    <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-md relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Osselle,+Franche-Comté,+France" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
+                            <p class="text-sm font-medium">Osselle, France</p>
+                            <p class="text-xs">Birthplace of Marie Pélagie Lyet</p>
+                        </div>
+                    </div>
+
+                    <!-- Besançon -->
+                    <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-md relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Besançon,+France" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
+                            <p class="text-sm font-medium">Besançon, France</p>
+                            <p class="text-xs">Birthplace of Marie Françoise Lyet</p>
+                        </div>
+                    </div>
+
+                    <!-- Continue pattern for other French locations -->
+                </div>
+
+                <!-- American Locations -->
+                <h4 class="text-xl font-semibold mb-4">United States</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Philadelphia locations -->
+                    <!-- Continue pattern for US locations -->
+                </div>
+
+                <!-- British Locations -->
+                <h4 class="text-xl font-semibold mb-4">United Kingdom</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- UK locations -->
+                </div>
+            </div>
         </div>
         <a href="#services" class="scroll-indicator">
             <div class="scroll-circle">
@@ -474,7 +530,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Contact Form -->
                 <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg flex flex-col h-full">
-                    <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
+                    <h3 class="text-2xl font-bold mb-4">Contact a Lyet</h3>
                     <form class="flex flex-col h-full">
                         <div class="space-y-4 flex-grow">
                             <div>
@@ -493,9 +549,9 @@
                     </form>
                 </div>
 
-                <!-- Appointment Request -->
+                <!-- Schedule Form -->
                 <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg flex flex-col h-full">
-                    <h3 class="text-2xl font-bold mb-4">Request Appointment</h3>
+                    <h3 class="text-2xl font-bold mb-4">Schedule with a Lyet</h3>
                     <form class="flex flex-col h-full">
                         <div class="space-y-4 flex-grow">
                             <div>
