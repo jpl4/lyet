@@ -81,21 +81,6 @@
                 padding-right: 0;
             }
         }
-
-        .aspect-w-8\.5 {
-            position: relative;
-            padding-bottom: 129.41%; /* (11/8.5 * 100) to maintain letter size ratio */
-        }
-        
-        .aspect-w-8\.5 > * {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
     </style>
 </head>
 <body>
@@ -348,40 +333,131 @@
             <div class="mb-12">
                 <h3 class="text-2xl font-semibold mb-6">Historical Documents</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Document Template (repeat for each document) -->
-                    <div class="aspect-w-8.5 aspect-h-11 bg-white rounded-lg shadow-md overflow-hidden">
+                    <!-- Forebears Map -->
+                    <div class="aspect-w-4 aspect-h-3">
                         <a href="/assets/documents/001_forebears_map.png" target="_blank" class="block relative group">
-                            <div class="absolute inset-0">
-                                <img 
-                                    src="/assets/documents/001_forebears_map.png" 
-                                    alt="Forebears Distribution Map" 
-                                    class="w-full h-full object-cover hover:opacity-75 transition-opacity"
-                                >
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
+                            <img 
+                                src="/assets/documents/001_forebears_map.png" 
+                                alt="Forebears Distribution Map" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
                                 <p class="text-sm font-medium">Global Distribution Map</p>
                             </div>
                         </a>
                     </div>
-                    
-                    <!-- Add this inside the Images Grid, within the grid container div -->
-                    <div class="aspect-w-8.5 aspect-h-11 bg-white rounded-lg shadow-md overflow-hidden">
-                        <a href="/assets/documents/jplyetii_horatio_alger.png" target="_blank" class="block relative group">
-                            <div class="absolute inset-0">
-                                <img 
-                                    src="/assets/documents/jplyetii_horatio_alger.png" 
-                                    alt="J.P. Lyet II Horatio Alger Award" 
-                                    class="w-full h-full object-cover hover:opacity-75 transition-opacity"
-                                >
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
-                                <p class="text-sm font-medium">Horatio Alger Award, Class of 1983</p>
-                                <p class="text-xs">J.P. Lyet II inducted into the Horatio Alger Association</p>
+
+                    <!-- Forebears Legends -->
+                    <div class="aspect-w-4 aspect-h-3">
+                        <a href="/assets/documents/002_forebears_legends.png" target="_blank" class="block relative group">
+                            <img 
+                                src="/assets/documents/002_forebears_legends.png" 
+                                alt="Forebears Legends" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
+                                <p class="text-sm font-medium">Historical Legends</p>
                             </div>
                         </a>
                     </div>
+
+                    <!-- France Map -->
+                    <div class="aspect-w-4 aspect-h-3">
+                        <a href="/assets/documents/003_map_lyet_france.png" target="_blank" class="block relative group">
+                            <img 
+                                src="/assets/documents/003_map_lyet_france.png" 
+                                alt="Lyet France Map" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
+                                <p class="text-sm font-medium">French Distribution Map</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Dorothy Wedding Article -->
+                    <div class="aspect-w-4 aspect-h-3">
+                        <a href="/assets/documents/040_dorothy_lyet_wedding_article.jpg" target="_blank" class="block relative group">
+                            <img 
+                                src="/assets/documents/040_dorothy_lyet_wedding_article.jpg" 
+                                alt="Dorothy Lyet Wedding Article" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
+                                <p class="text-sm font-medium">Dorothy Lyet Wedding Article</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sperry Rand -->
+                    <div class="aspect-w-4 aspect-h-3">
+                        <a href="/assets/documents/048_iving_in_at_sperry_rand.png" target="_blank" class="block relative group">
+                            <img 
+                                src="/assets/documents/048_iving_in_at_sperry_rand.png" 
+                                alt="Living in at Sperry Rand" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
+                                <p class="text-sm font-medium">Living in at Sperry Rand</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Chairman Dies Article -->
+                    <div class="aspect-w-4 aspect-h-3">
+                        <a href="/assets/documents/049_jplyet_former_chairman_dies.png" target="_blank" class="block relative group">
+                            <img 
+                                src="/assets/documents/049_jplyet_former_chairman_dies.png" 
+                                alt="J.P. Lyet Former Chairman Dies" 
+                                class="object-cover w-full h-full rounded-lg shadow-md hover:opacity-75 transition-opacity"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg">
+                                <p class="text-sm font-medium">J.P. Lyet Former Chairman Dies</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Family Videos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- First YouTube Embed -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
+                        <iframe 
+                            src="https://www.youtube.com/embed/h3e8Nqefx8M"
+                            title="Computer History Archives Project"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            class="w-full h-full">
+                        </iframe>
+                    </div>
                     
-                    <!-- Repeat for other documents with the same structure -->
+                    <!-- Reagan Library Video -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
+                        <iframe 
+                            src="https://www.youtube.com/embed/_5TNVD_RiZs"
+                            title="Reagan Library Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            class="w-full h-full">
+                        </iframe>
+                    </div>
+
+                    <!-- Sperry Commercial -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md relative">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="https://digital.hagley.org/islandora/object/islandora%3A2578820/datastream/MP4/view" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2">
+                            <p class="text-sm font-medium">Sperry Commercial (1979)</p>
+                            <p class="text-xs">Chairman J. Paul Lyet on the importance of listening</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
