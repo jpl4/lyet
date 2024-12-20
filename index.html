@@ -30,7 +30,8 @@
         }
         .section {
             min-height: 100vh;
-            padding: 4rem 2rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
             position: relative;
         }
         .contact-form {
@@ -62,6 +63,23 @@
         .scroll-circle i {
             color: #333;
             font-size: 20px;
+        }
+        
+        /* Add new mobile-first container class */
+        .mobile-container {
+            width: 100%;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-container {
+                max-width: 42rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     </style>
 </head>
@@ -95,11 +113,11 @@
 
     <!-- About Section -->
     <section id="about" class="section bg-gray-50 relative">
-        <div class="container mx-auto">
+        <div class="mobile-container">
             <h2 class="text-4xl font-bold text-center mb-8">About</h2>
             
             <!-- Pronunciation Guide Box -->
-            <div class="mx-4 md:max-w-2xl md:mx-auto mb-12 p-6 rounded-lg border border-gray-200 shadow-sm bg-white">
+            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-12">
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <h3 class="text-2xl font-semibold mb-2">Lyet</h3>
@@ -116,7 +134,7 @@
             </div>
 
             <!-- Origin Story -->
-            <div class="mx-4 md:max-w-2xl md:mx-auto mb-12">
+            <div class="mb-12">
                 <h3 class="text-3xl font-semibold mb-6 text-center">Origin</h3>
                 
                 <!-- Story Section -->
@@ -137,7 +155,7 @@
             </div>
 
             <!-- Research Links -->
-            <div class="mx-4 md:max-w-2xl md:mx-auto mb-12">
+            <div class="mb-12">
                 <h3 class="text-3xl font-semibold mb-6 text-center">Research Links</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Filae Link -->
@@ -173,7 +191,7 @@
             </div>
 
             <!-- Fun Facts Section -->
-            <div class="mx-4 md:max-w-2xl md:mx-auto mb-12">
+            <div class="mb-12">
                 <h3 class="text-3xl font-semibold mb-6 text-center">Fun Facts About Lyets</h3>
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 md:p-6">
@@ -264,12 +282,12 @@
     </section>
 
     <!-- Documents Section -->
-    <section id="documents" class="min-h-screen bg-gray-100 py-20 relative">
-        <div class="container mx-auto">
+    <section id="documents" class="section bg-gray-100">
+        <div class="mobile-container">
             <h2 class="text-4xl font-bold text-center mb-8">Documents</h2>
             
             <!-- Images Grid -->
-            <div class="mx-1 md:max-w-2xl md:mx-auto mb-12">
+            <div class="mb-12">
                 <h3 class="text-2xl font-semibold mb-6">Historical Documents</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="aspect-w-4 aspect-h-3">
@@ -309,7 +327,7 @@
             </div>
 
             <!-- Videos Grid -->
-            <div class="mx-1 md:max-w-2xl md:mx-auto">
+            <div class="mb-12">
                 <h3 class="text-2xl font-semibold mb-6">Family Videos</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- First YouTube Embed -->
@@ -358,10 +376,10 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section bg-gray-50 relative">
-        <div class="container mx-auto p-4 md:p-6">
+    <section id="services" class="section bg-gray-50">
+        <div class="mobile-container">
             <h2 class="text-4xl font-bold text-center mb-12">Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Contact Form -->
                 <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg flex flex-col h-full">
                     <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
