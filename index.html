@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyet — A Rare Name, Well Kept</title>
+    <title>Lyet — Est. 1592</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -59,7 +59,6 @@
             padding: 0 24px;
         }
 
-        /* ---------- eyebrow / labels ---------- */
         .eyebrow {
             font-family: var(--sans);
             font-size: 11px;
@@ -73,7 +72,7 @@
             width: 56px;
             height: 1px;
             background: var(--gold);
-            margin: 22px auto;
+            margin: 18px auto;
             opacity: 0.7;
         }
 
@@ -243,23 +242,23 @@
 
         /* ---------- sections ---------- */
         section {
-            padding: 120px 0;
+            padding: 84px 0;
             position: relative;
         }
         section.alt { background: var(--ink-2); }
 
         .section-head {
             text-align: center;
-            margin-bottom: 72px;
+            margin-bottom: 48px;
             position: relative;
         }
         .section-num {
             position: absolute;
-            top: -68px;
+            top: -58px;
             left: 50%;
             transform: translateX(-50%);
             font-family: var(--serif);
-            font-size: 150px;
+            font-size: 130px;
             font-weight: 300;
             color: rgba(201, 168, 106, 0.06);
             line-height: 1;
@@ -267,7 +266,7 @@
             pointer-events: none;
         }
         .section-title {
-            font-size: clamp(36px, 5.5vw, 56px);
+            font-size: clamp(34px, 5vw, 50px);
             letter-spacing: 0.02em;
         }
         .section-title em { color: var(--gold-bright); }
@@ -276,10 +275,11 @@
             display: flex;
             align-items: baseline;
             gap: 16px;
-            margin: 64px 0 28px;
+            margin: 48px 0 24px;
         }
+        .sub-head:first-of-type { margin-top: 0; }
         .sub-head h3 {
-            font-size: 26px;
+            font-size: 24px;
             white-space: nowrap;
         }
         .sub-head .line {
@@ -305,7 +305,7 @@
             margin: 0 auto;
             border: 1px solid var(--line);
             background: linear-gradient(160deg, var(--ink-3), var(--ink-2));
-            padding: 40px 44px;
+            padding: 34px 40px;
             position: relative;
         }
         .pron-card::before, .pron-card::after {
@@ -320,16 +320,16 @@
         .pron-card::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
         .pron-word {
             font-family: var(--serif);
-            font-size: 48px;
+            font-size: 44px;
             line-height: 1;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .pron-row {
             display: flex;
             align-items: center;
             gap: 22px;
             flex-wrap: wrap;
-            padding: 18px 0;
+            padding: 16px 0;
             border-top: 1px solid rgba(201, 168, 106, 0.14);
         }
         .pron-label {
@@ -361,25 +361,105 @@
             opacity: 0.85;
         }
         @media (max-width: 560px) {
-            .pron-card { padding: 28px 24px; }
+            .pron-card { padding: 26px 22px; }
             .pron-card audio { margin-left: 0; }
         }
 
-        /* ---------- story ---------- */
-        .story {
+        /* ---------- origins lede ---------- */
+        .lede {
             max-width: 680px;
             margin: 0 auto;
-            font-size: 17px;
+            text-align: center;
+        }
+        .lede p {
+            font-family: var(--serif);
+            font-size: 20px;
+            line-height: 1.75;
             color: #d8d0c0;
         }
-        .story p { margin-bottom: 26px; }
-        .story p:first-of-type::first-letter {
-            font-family: var(--serif);
-            font-size: 74px;
-            line-height: 0.8;
-            float: left;
-            padding: 10px 12px 0 0;
+        .lede p em { color: var(--gold-bright); font-style: italic; }
+
+        .btn {
+            padding: 14px 30px;
+            background: transparent;
+            border: 1px solid var(--gold);
             color: var(--gold-bright);
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.35s ease;
+            z-index: 1;
+        }
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+            z-index: -1;
+        }
+        .btn:hover { color: var(--ink); }
+        .btn:hover::before { transform: scaleX(1); }
+        .lede .btn { margin-top: 26px; display: inline-block; }
+
+        /* ---------- timeline ---------- */
+        .timeline {
+            display: flex;
+            overflow-x: auto;
+            margin-top: 40px;
+            padding-bottom: 14px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) transparent;
+        }
+        .timeline::-webkit-scrollbar { height: 4px; }
+        .timeline::-webkit-scrollbar-thumb { background: rgba(201, 168, 106, 0.4); }
+        .timeline::-webkit-scrollbar-track { background: rgba(201, 168, 106, 0.08); }
+        .tl-item {
+            min-width: 215px;
+            flex-shrink: 0;
+            position: relative;
+            padding: 26px 26px 0 0;
+        }
+        .tl-item::before {
+            content: "";
+            position: absolute;
+            top: 3px; left: 0; right: 0;
+            height: 1px;
+            background: var(--line);
+        }
+        .tl-item::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+        .tl-year {
+            font-family: var(--serif);
+            font-size: 26px;
+            color: var(--gold-bright);
+            line-height: 1;
+        }
+        .tl-place {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--cream-dim);
+            margin: 8px 0 6px;
+        }
+        .tl-text {
+            font-size: 13.5px;
+            color: #d8d0c0;
+            line-height: 1.55;
         }
 
         /* ---------- research links ---------- */
@@ -392,7 +472,7 @@
         .link-card {
             border: 1px solid var(--line);
             background: var(--ink-3);
-            padding: 26px 28px;
+            padding: 22px 26px;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -405,8 +485,8 @@
             background: var(--ink-2);
         }
         .link-card h4 {
-            font-size: 20px;
-            margin-bottom: 6px;
+            font-size: 19px;
+            margin-bottom: 4px;
             transition: color 0.3s ease;
         }
         .link-card:hover h4 { color: var(--gold-bright); }
@@ -433,23 +513,23 @@
         @media (max-width: 700px) { .facts-grid { grid-template-columns: 1fr; } }
         .fact-cell {
             background: var(--ink-2);
-            padding: 38px 34px;
+            padding: 30px 30px;
         }
         .fact-cell h4 {
-            font-size: 13px;
+            font-size: 12px;
             font-family: var(--sans);
             font-weight: 500;
             letter-spacing: 0.28em;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 22px;
+            margin-bottom: 16px;
         }
         .fact-cell ul { list-style: none; }
         .fact-cell li {
             display: flex;
             gap: 12px;
-            padding: 9px 0;
-            font-size: 14.5px;
+            padding: 8px 0;
+            font-size: 14px;
             color: #d8d0c0;
             border-bottom: 1px solid rgba(201, 168, 106, 0.08);
         }
@@ -474,6 +554,7 @@
             overflow: hidden;
             border: 1px solid var(--line);
             background: var(--ink-3);
+            cursor: zoom-in;
         }
         .doc-card img {
             width: 100%;
@@ -540,46 +621,125 @@
             color: var(--cream-dim);
         }
 
-        /* ---------- locations ---------- */
-        .map-grid {
+        /* ---------- locations explorer ---------- */
+        .loc-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .loc-tab {
+            padding: 11px 24px;
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--cream-dim);
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+        }
+        .loc-tab:hover { color: var(--cream); border-color: var(--gold); }
+        .loc-tab.active {
+            border-color: var(--gold);
+            color: var(--gold-bright);
+            background: rgba(201, 168, 106, 0.07);
+        }
+        .loc-tab .count {
+            color: var(--gold);
+            margin-left: 6px;
+        }
+        .loc-body {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 320px 1fr;
             gap: 20px;
         }
-        @media (max-width: 800px) { .map-grid { grid-template-columns: 1fr; } }
-        .map-card {
+        .loc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 6px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) transparent;
+        }
+        .loc-list::-webkit-scrollbar { width: 4px; }
+        .loc-list::-webkit-scrollbar-thumb { background: rgba(201, 168, 106, 0.4); }
+        .loc-item {
+            text-align: left;
+            padding: 13px 16px;
+            border: 1px solid rgba(201, 168, 106, 0.1);
+            background: var(--ink-3);
+            color: var(--cream);
+            cursor: pointer;
+            font-family: var(--sans);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .loc-item:hover { border-color: var(--gold); }
+        .loc-item.active {
+            border-color: var(--gold);
+            background: rgba(201, 168, 106, 0.07);
+        }
+        .loc-item .name {
+            font-family: var(--serif);
+            font-size: 16px;
+            display: block;
+        }
+        .loc-item .note {
+            font-size: 11.5px;
+            color: var(--cream-dim);
+            display: block;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+        .loc-map {
             position: relative;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
             border: 1px solid var(--line);
             background: var(--ink-3);
-            transition: border-color 0.35s ease;
+            min-height: 500px;
         }
-        .map-card:hover { border-color: var(--gold); }
-        .map-card iframe {
+        .loc-map iframe {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             border: 0;
-            filter: grayscale(0.5) contrast(1.02);
+            filter: grayscale(0.4) contrast(1.02);
             transition: filter 0.5s ease;
         }
-        .map-card:hover iframe { filter: grayscale(0); }
-        .map-card .caption {
+        .loc-map:hover iframe { filter: grayscale(0); }
+        .loc-map .caption {
             position: absolute;
             left: 0; right: 0; bottom: 0;
-            padding: 10px 16px;
+            padding: 12px 18px;
             background: rgba(14, 13, 11, 0.85);
             backdrop-filter: blur(6px);
             pointer-events: none;
             border-top: 1px solid var(--line);
         }
-        .map-card .caption .place {
+        .loc-map .caption .place {
             font-family: var(--serif);
-            font-size: 15px;
+            font-size: 17px;
         }
-        .map-card .caption .note {
-            font-size: 11.5px;
+        .loc-map .caption .note {
+            font-size: 12px;
             color: var(--cream-dim);
+        }
+        @media (max-width: 860px) {
+            .loc-body { grid-template-columns: 1fr; }
+            .loc-list {
+                flex-direction: row;
+                overflow-x: auto;
+                overflow-y: hidden;
+                max-height: none;
+                padding-bottom: 8px;
+            }
+            .loc-item { min-width: 230px; flex-shrink: 0; }
+            .loc-map { min-height: 340px; }
         }
 
         /* ---------- services ---------- */
@@ -592,18 +752,18 @@
         .form-card {
             border: 1px solid var(--line);
             background: var(--ink-3);
-            padding: 40px 36px;
+            padding: 36px 34px;
             display: flex;
             flex-direction: column;
         }
         .form-card h3 {
-            font-size: 26px;
+            font-size: 25px;
             margin-bottom: 6px;
         }
         .form-card .form-note {
             font-size: 13px;
             color: var(--cream-dim);
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             font-style: italic;
             font-family: var(--serif);
         }
@@ -616,7 +776,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 16px;
         }
         .form-card input,
         .form-card textarea {
@@ -639,50 +799,123 @@
             outline: none;
             border-bottom-color: var(--gold);
         }
-        .form-card textarea { height: 110px; resize: vertical; }
+        .form-card textarea { height: 100px; resize: vertical; }
         .form-card input[type="date"],
         .form-card input[type="time"] {
             color-scheme: dark;
         }
-        .btn {
-            margin-top: 30px;
-            padding: 15px 28px;
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold-bright);
-            font-family: var(--sans);
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: color 0.35s ease;
-            z-index: 1;
+        .form-card .btn { margin-top: 26px; width: 100%; }
+
+        /* ---------- modal ---------- */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
         }
-        .btn::before {
-            content: "";
+        .modal[hidden] { display: none; }
+        .modal-backdrop {
             position: absolute;
             inset: 0;
-            background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.35s ease;
-            z-index: -1;
+            background: rgba(10, 9, 7, 0.82);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        .btn:hover { color: var(--ink); }
-        .btn:hover::before { transform: scaleX(1); }
+        .modal-panel {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            max-height: 86vh;
+            overflow-y: auto;
+            background: var(--ink-2);
+            border: 1px solid var(--line);
+            border-top: 2px solid var(--gold);
+            padding: 48px 52px;
+            animation: modalIn 0.35s ease both;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) transparent;
+        }
+        .modal-panel::-webkit-scrollbar { width: 4px; }
+        .modal-panel::-webkit-scrollbar-thumb { background: rgba(201, 168, 106, 0.4); }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: var(--cream-dim);
+            font-size: 26px;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .modal-close:hover { color: var(--gold); }
+        .modal-panel h3 {
+            font-size: 30px;
+            margin: 6px 0 24px;
+        }
+        .modal-panel h3 em { color: var(--gold-bright); }
+        .story p {
+            margin-bottom: 22px;
+            font-size: 16px;
+            color: #d8d0c0;
+        }
+        .story p:last-child { margin-bottom: 0; }
+        .story p:first-of-type::first-letter {
+            font-family: var(--serif);
+            font-size: 64px;
+            line-height: 0.8;
+            float: left;
+            padding: 9px 11px 0 0;
+            color: var(--gold-bright);
+        }
+        /* lightbox variant */
+        .modal-panel.lightbox {
+            max-width: min(92vw, 880px);
+            padding: 0;
+            background: transparent;
+            border: none;
+            overflow: visible;
+            text-align: center;
+        }
+        .modal-panel.lightbox img {
+            max-width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            border: 1px solid var(--line);
+            background: var(--ink-2);
+        }
+        .modal-panel.lightbox .lb-caption {
+            margin-top: 14px;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 15px;
+            color: var(--cream-dim);
+        }
+        .modal-panel.lightbox .modal-close {
+            top: -38px;
+            right: 0;
+        }
+        @media (max-width: 560px) {
+            .modal-panel { padding: 38px 26px; }
+        }
 
         /* ---------- footer ---------- */
         footer {
             border-top: 1px solid var(--line);
-            padding: 56px 0;
+            padding: 48px 0;
             text-align: center;
         }
         footer .wordmark { font-size: 26px; }
         footer p {
-            margin-top: 14px;
+            margin-top: 12px;
             font-family: var(--serif);
             font-style: italic;
             font-size: 15px;
@@ -754,7 +987,7 @@
                     <span class="pron-label">French</span>
                     <div>
                         <div class="pron-say">lyeh</div>
-                        <div class="pron-ipa">/ljɛ/</div>
+                        <div class="pron-ipa">/ljɛ/ — like "yeah" with an L</div>
                     </div>
                     <audio controls>
                         <source src="assets/audio/lyet_pron_1.m4a" type="audio/mp4">
@@ -764,23 +997,59 @@
             </div>
 
             <!-- Origins -->
-            <div class="sub-head reveal">
+            <div class="sub-head reveal" style="margin-top: 48px;">
                 <h3>Origins</h3>
                 <div class="line"></div>
             </div>
-            <div class="story reveal">
+            <div class="lede reveal">
                 <p>
-                    The Lyet story is rooted in Franche-Comté, in eastern France — a region of limestone hills, river valleys, and small farming villages along the Doubs. The earliest French record of the name dates to 1758, in the village of Routelle, and for generations afterward the family appears in the registers of the surrounding countryside: Osselle, Lantenne, Cléron, Fourg, and the regional capital of Besançon.
+                    Rooted in the farming villages of <em>Franche-Comté</em>, first recorded in England in <em>1592</em> and in France in <em>1758</em>, the Lyet name crossed the Atlantic in the mid-1800s and took hold in Philadelphia. Four centuries on, fewer than a thousand Lyets remain worldwide.
                 </p>
-                <p>
-                    The records describe quiet, rooted lives. Marie Pélagie Lyet was born in Osselle in 1861 and died in 1938 in Pirey, only a few kilometers away. Marie Françoise Lyet was born in Besançon in 1841; Jean-François Lyet and his descendants appear in the same parish records through the nineteenth century. The name's origin is uncertain, though it is thought to come from an Old French root associated with joy or high spirits. An older thread runs through England: the earliest record of the name anywhere is Elizabeth Lyet, born in 1592 in Manston, Dorset, who lived ninety-six years.
-                </p>
-                <p>
-                    In the mid-nineteenth century, the name crossed the Atlantic. Nicolas François Lyet, born in France around 1824, died in Philadelphia in 1898; his son Louis Claude, born in Paris in 1855, made the same journey and settled there. From that foothold the family spread through Pennsylvania, New Jersey, Connecticut, and Ohio, with four generations recorded in Philadelphia between the 1880s and the 1980s. Among them was J. Paul Lyet II (1917–1984), who rose from north Philadelphia to become chairman of Sperry Corporation and a Horatio Alger Award recipient in 1983.
-                </p>
-                <p>
-                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today, spread across France, Germany, and the United States — a small family carrying a name that has now survived more than four centuries of written records.
-                </p>
+                <button class="btn" id="storyOpen">Read the Full Story</button>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline reveal">
+                <div class="tl-item">
+                    <div class="tl-year">1592</div>
+                    <div class="tl-place">Manston, Dorset</div>
+                    <div class="tl-text">Elizabeth Lyet is born — the earliest record of the name anywhere. She lives 96 years.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1758</div>
+                    <div class="tl-place">Routelle, Doubs</div>
+                    <div class="tl-text">The earliest French record of the name, in a small village on the Doubs.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1855</div>
+                    <div class="tl-place">Paris</div>
+                    <div class="tl-text">Louis Claude Lyet is born in Paris; he later emigrates and settles in Philadelphia.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1861</div>
+                    <div class="tl-place">Osselle, Doubs</div>
+                    <div class="tl-text">Marie Pélagie Lyet is born as the parish registers of the Doubs fill with the name.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1898</div>
+                    <div class="tl-place">Philadelphia</div>
+                    <div class="tl-text">Nicolas François Lyet dies in Philadelphia — the American line has taken root.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1917</div>
+                    <div class="tl-place">Philadelphia</div>
+                    <div class="tl-text">J. Paul Lyet II is born; he rises to become chairman of Sperry Corporation.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1983</div>
+                    <div class="tl-place">United States</div>
+                    <div class="tl-text">J. Paul Lyet II receives the Horatio Alger Award.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Today</div>
+                    <div class="tl-place">Worldwide</div>
+                    <div class="tl-text">Fewer than 1,000 Lyets across France, Germany, and the United States.</div>
+                </div>
             </div>
 
             <!-- Research Links -->
@@ -819,7 +1088,7 @@
                 </a>
             </div>
 
-            <!-- Fun Facts -->
+            <!-- Facts & Figures -->
             <div class="sub-head reveal">
                 <h3>Facts &amp; Figures</h3>
                 <div class="line"></div>
@@ -951,205 +1220,16 @@
                 <div class="rule"></div>
             </div>
 
-            <!-- France -->
-            <div class="sub-head reveal">
-                <h3>France</h3>
-                <div class="line"></div>
-            </div>
-            <div class="map-grid reveal">
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Osselle,+Franche-Comté,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Osselle, France</div>
-                        <div class="note">Birthplace of Marie Pélagie Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Besançon,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Besançon, France</div>
-                        <div class="note">Birthplace of Marie Françoise Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Cléron,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Cléron, France</div>
-                        <div class="note">Marie Émile Lyet, 1857</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Damparis,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Damparis, France</div>
-                        <div class="note">Birthplace of Martial Lyet, 1915</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Devecey,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Devecey, France</div>
-                        <div class="note">Deathplace of Anne Lyet, 1864</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Lantenne-Vertière,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Lantenne, France</div>
-                        <div class="note">18th-century family records</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Paris,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Paris, France</div>
-                        <div class="note">Louis Claude Lyet and Maurice Léon Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Routelle,+Bourgogne-Franche-Comté,+France"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Routelle, France</div>
-                        <div class="note">Earliest French Lyet records (1758)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Germany -->
-            <div class="sub-head reveal">
-                <h3>Germany</h3>
-                <div class="line"></div>
-            </div>
-            <div class="map-grid reveal">
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Pleidelsheim,+Germany"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Pleidelsheim, Germany</div>
-                        <div class="note">Childhood home of Dorothy Lyet before immigrating to USA</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- United States -->
-            <div class="sub-head reveal">
-                <h3>United States</h3>
-                <div class="line"></div>
-            </div>
-            <div class="map-grid reveal">
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=2600+W+Thompson+St,+Philadelphia,+PA+19121"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Robert Morris High School</div>
-                        <div class="note">High School of Jean Paul Lyet II</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=2729+Brown+Street,+Philadelphia,+PA"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">2729 Brown Street</div>
-                        <div class="note">Home of Jean Paul Lyet II</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=1531+North+Robinson+Street,+Philadelphia,+PA"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">1531 North Robinson Street</div>
-                        <div class="note">Childhood home of Dorthy Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=6122+Haverford+Ave,+Philadelphia,+PA+19151"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Palatinate Reformed Church</div>
-                        <div class="note">Wedding location of J.P. Lyet II and Dorthy Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=2831+Girard+Ave,+Philadelphia,+PA"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Leitners Florists</div>
-                        <div class="note">Florist for the wedding of J.P. Lyet II and Dorthy Lyet</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Bellevue+Stratford,+Philadelphia,+PA"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Bellevue Stratford</div>
-                        <div class="note">Reception location for J.P. Lyet II and Dorthy Lyet</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- United Kingdom -->
-            <div class="sub-head reveal">
-                <h3>United Kingdom</h3>
-                <div class="line"></div>
-            </div>
-            <div class="map-grid reveal">
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Manston,+Dorset,+England"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Manston, Dorset</div>
-                        <div class="note">Elizabeth Lyet, 1592</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Dorchester,+UK"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Dorchester, Dorset</div>
-                        <div class="note">Elizabeth Lyet, 1688</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Exeter,+Devon,+England"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Exeter, Devon</div>
-                        <div class="note">Elizabeth Lyet, 1688–1759</div>
-                    </div>
-                </div>
-                <div class="map-card">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q&q=Scotland"
-                        allowfullscreen loading="lazy"></iframe>
-                    <div class="caption">
-                        <div class="place">Scotland</div>
-                        <div class="note">Christian Lyet (1700 origin)</div>
+            <div class="reveal">
+                <div class="loc-tabs" id="locTabs"></div>
+                <div class="loc-body">
+                    <div class="loc-list" id="locList"></div>
+                    <div class="loc-map">
+                        <iframe id="locFrame" allowfullscreen loading="lazy" title="Location map"></iframe>
+                        <div class="caption">
+                            <div class="place" id="locPlace"></div>
+                            <div class="note" id="locNote"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1200,9 +1280,43 @@
     <footer>
         <div class="wrap">
             <div class="wordmark">Ly<span>e</span>t</div>
-            <p>A rare name, well kept — Franche-Comté to the world.</p>
+            <p>Four centuries. Three continents. Fewer than a thousand of us.</p>
         </div>
     </footer>
+
+    <!-- Story Modal -->
+    <div class="modal" id="storyModal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <p class="eyebrow">The Full Story</p>
+            <h3>Origins of the <em>Name</em></h3>
+            <div class="story">
+                <p>
+                    The Lyet story is rooted in Franche-Comté, in eastern France — a region of limestone hills, river valleys, and small farming villages along the Doubs. The earliest French record of the name dates to 1758, in the village of Routelle, and for generations afterward the family appears in the registers of the surrounding countryside: Osselle, Lantenne, Cléron, Fourg, and the regional capital of Besançon.
+                </p>
+                <p>
+                    The records describe quiet, rooted lives. Marie Pélagie Lyet was born in Osselle in 1861 and died in 1938 in Pirey, only a few kilometers away. Marie Françoise Lyet was born in Besançon in 1841; Jean-François Lyet and his descendants appear in the same parish records through the nineteenth century. The name's origin is uncertain, though it is thought to come from an Old French root associated with joy or high spirits. An older thread runs through England: the earliest record of the name anywhere is Elizabeth Lyet, born in 1592 in Manston, Dorset, who lived ninety-six years.
+                </p>
+                <p>
+                    In the mid-nineteenth century, the name crossed the Atlantic. Nicolas François Lyet, born in France around 1824, died in Philadelphia in 1898; his son Louis Claude, born in Paris in 1855, made the same journey and settled there. From that foothold the family spread through Pennsylvania, New Jersey, Connecticut, and Ohio, with four generations recorded in Philadelphia between the 1880s and the 1980s. Among them was J. Paul Lyet II (1917–1984), who rose from north Philadelphia to become chairman of Sperry Corporation and a Horatio Alger Award recipient in 1983.
+                </p>
+                <p>
+                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today, spread across France, Germany, and the United States — a small family carrying a name that has now survived more than four centuries of written records.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Lightbox -->
+    <div class="modal" id="docModal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel lightbox">
+            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <img id="lbImage" src="" alt="">
+            <div class="lb-caption" id="lbCaption"></div>
+        </div>
+    </div>
 
     <script>
         // Nav goes glassy after leaving the hero
@@ -1221,6 +1335,115 @@
             });
         }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // ---------- Modals ----------
+        function openModal(m) {
+            m.hidden = false;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(m) {
+            m.hidden = true;
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.modal').forEach((m) => {
+            m.querySelectorAll('[data-close]').forEach((el) =>
+                el.addEventListener('click', () => closeModal(m)));
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape')
+                document.querySelectorAll('.modal:not([hidden])').forEach(closeModal);
+        });
+
+        const storyModal = document.getElementById('storyModal');
+        document.getElementById('storyOpen').addEventListener('click', () => openModal(storyModal));
+
+        // Document lightbox
+        const docModal = document.getElementById('docModal');
+        const lbImage = document.getElementById('lbImage');
+        const lbCaption = document.getElementById('lbCaption');
+        document.querySelectorAll('.doc-card').forEach((card) => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                lbImage.src = card.getAttribute('href');
+                lbImage.alt = card.querySelector('img').alt;
+                lbCaption.textContent = card.querySelector('.caption').textContent.trim();
+                openModal(docModal);
+            });
+        });
+
+        // ---------- Locations explorer ----------
+        const MAPS_KEY = 'AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q';
+        const LOCATIONS = {
+            'France': [
+                { name: 'Routelle', note: 'Earliest French Lyet records (1758)', q: 'Routelle,+Bourgogne-Franche-Comté,+France' },
+                { name: 'Osselle', note: 'Birthplace of Marie Pélagie Lyet', q: 'Osselle,+Franche-Comté,+France' },
+                { name: 'Besançon', note: 'Birthplace of Marie Françoise Lyet', q: 'Besançon,+France' },
+                { name: 'Cléron', note: 'Marie Émile Lyet, 1857', q: 'Cléron,+France' },
+                { name: 'Damparis', note: 'Birthplace of Martial Lyet, 1915', q: 'Damparis,+France' },
+                { name: 'Devecey', note: 'Deathplace of Anne Lyet, 1864', q: 'Devecey,+France' },
+                { name: 'Lantenne', note: '18th-century family records', q: 'Lantenne-Vertière,+France' },
+                { name: 'Paris', note: 'Louis Claude Lyet and Maurice Léon Lyet', q: 'Paris,+France' }
+            ],
+            'Germany': [
+                { name: 'Pleidelsheim', note: 'Childhood home of Dorothy Lyet before immigrating to USA', q: 'Pleidelsheim,+Germany' }
+            ],
+            'United States': [
+                { name: 'Robert Morris High School', note: 'High School of Jean Paul Lyet II', q: '2600+W+Thompson+St,+Philadelphia,+PA+19121' },
+                { name: '2729 Brown Street', note: 'Home of Jean Paul Lyet II', q: '2729+Brown+Street,+Philadelphia,+PA' },
+                { name: '1531 North Robinson Street', note: 'Childhood home of Dorothy Lyet', q: '1531+North+Robinson+Street,+Philadelphia,+PA' },
+                { name: 'Palatinate Reformed Church', note: 'Wedding location of J.P. Lyet II and Dorothy Lyet', q: '6122+Haverford+Ave,+Philadelphia,+PA+19151' },
+                { name: 'Leitners Florists', note: 'Florist for the wedding of J.P. Lyet II and Dorothy Lyet', q: '2831+Girard+Ave,+Philadelphia,+PA' },
+                { name: 'Bellevue Stratford', note: 'Reception location for J.P. Lyet II and Dorothy Lyet', q: 'Bellevue+Stratford,+Philadelphia,+PA' }
+            ],
+            'United Kingdom': [
+                { name: 'Manston, Dorset', note: 'Elizabeth Lyet, 1592', q: 'Manston,+Dorset,+England' },
+                { name: 'Dorchester, Dorset', note: 'Elizabeth Lyet, 1688', q: 'Dorchester,+UK' },
+                { name: 'Exeter, Devon', note: 'Elizabeth Lyet, 1688–1759', q: 'Exeter,+Devon,+England' },
+                { name: 'Scotland', note: 'Christian Lyet (1700 origin)', q: 'Scotland' }
+            ]
+        };
+
+        const locTabs = document.getElementById('locTabs');
+        const locList = document.getElementById('locList');
+        const locFrame = document.getElementById('locFrame');
+        const locPlace = document.getElementById('locPlace');
+        const locNote = document.getElementById('locNote');
+        let currentCountry = 'France';
+
+        function selectPlace(place, btn) {
+            locFrame.src = 'https://www.google.com/maps/embed/v1/place?key=' + MAPS_KEY + '&q=' + place.q;
+            locPlace.textContent = place.name;
+            locNote.textContent = place.note;
+            locList.querySelectorAll('.loc-item').forEach((el) => el.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        function selectCountry(country) {
+            currentCountry = country;
+            locTabs.querySelectorAll('.loc-tab').forEach((el) =>
+                el.classList.toggle('active', el.dataset.country === country));
+            locList.innerHTML = '';
+            LOCATIONS[country].forEach((place, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'loc-item' + (i === 0 ? ' active' : '');
+                btn.innerHTML = '<span class="name"></span><span class="note"></span>';
+                btn.querySelector('.name').textContent = place.name;
+                btn.querySelector('.note').textContent = place.note;
+                btn.addEventListener('click', () => selectPlace(place, btn));
+                locList.appendChild(btn);
+            });
+            selectPlace(LOCATIONS[country][0], locList.querySelector('.loc-item'));
+        }
+
+        Object.keys(LOCATIONS).forEach((country) => {
+            const tab = document.createElement('button');
+            tab.className = 'loc-tab';
+            tab.dataset.country = country;
+            tab.innerHTML = country + ' <span class="count">' + LOCATIONS[country].length + '</span>';
+            tab.addEventListener('click', () => selectCountry(country));
+            locTabs.appendChild(tab);
+        });
+        selectCountry('France');
     </script>
 </body>
 </html>
