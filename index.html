@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyet — Est. 1592</title>
+    <title>Lyet — Est. 1758</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #0e0d0b;
@@ -49,6 +50,19 @@
         ::selection { background: var(--gold); color: var(--ink); }
 
         h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: 300;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            display: inline-block;
+            white-space: nowrap;
+            direction: ltr;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            -webkit-font-smoothing: antialiased;
+        }
 
         a { color: inherit; text-decoration: none; }
 
@@ -133,9 +147,17 @@
         .nav-links a:hover { color: var(--cream); }
         .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
         @media (max-width: 640px) {
-            .nav-links { gap: 18px; }
-            .nav-links a { font-size: 10px; letter-spacing: 0.15em; }
-            .wordmark { font-size: 18px; }
+            nav { padding: 16px 0; }
+            nav .wrap { padding: 0 16px; }
+            .nav-inner { gap: 16px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 9.5px; letter-spacing: 0.1em; }
+            .wordmark { font-size: 16px; letter-spacing: 0.18em; }
+        }
+        @media (max-width: 360px) {
+            nav { padding: 12px 0; }
+            nav.scrolled { padding: 10px 0; }
+            .nav-inner { flex-direction: column; gap: 8px; }
         }
 
         /* ---------- hero ---------- */
@@ -288,6 +310,15 @@
             background: var(--line);
         }
 
+        /* phones: tighter rhythm */
+        @media (max-width: 640px) {
+            section { padding: 56px 0; }
+            .section-head { margin-bottom: 36px; }
+            .section-num { font-size: 88px; top: -40px; }
+            .sub-head { margin: 36px 0 20px; }
+            .sub-head h3 { font-size: 20px; white-space: normal; }
+        }
+
         /* reveal on scroll */
         .reveal {
             opacity: 0;
@@ -410,22 +441,60 @@
         .lede .btn { margin-top: 26px; display: inline-block; }
 
         /* ---------- timeline ---------- */
+        .timeline-wrap {
+            position: relative;
+            margin-top: 40px;
+        }
+        .timeline-wrap::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 18px;
+            width: 72px;
+            background: linear-gradient(to right, transparent, var(--ink));
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .timeline-wrap.at-end::after { opacity: 0; }
+        .tl-hint {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 5px;
+            margin-bottom: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            transition: opacity 0.4s ease;
+        }
+        .tl-hint .material-symbols-outlined {
+            font-size: 15px;
+            animation: nudge 2.2s ease-in-out infinite;
+        }
+        @keyframes nudge {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        .timeline-wrap.scrolled .tl-hint { opacity: 0; }
         .timeline {
             display: flex;
             overflow-x: auto;
-            margin-top: 40px;
             padding-bottom: 14px;
             scrollbar-width: thin;
             scrollbar-color: var(--gold) transparent;
+            scroll-snap-type: x proximity;
+            -webkit-overflow-scrolling: touch;
         }
         .timeline::-webkit-scrollbar { height: 4px; }
         .timeline::-webkit-scrollbar-thumb { background: rgba(201, 168, 106, 0.4); }
         .timeline::-webkit-scrollbar-track { background: rgba(201, 168, 106, 0.08); }
         .tl-item {
-            min-width: 215px;
+            width: 230px;
             flex-shrink: 0;
             position: relative;
             padding: 26px 26px 0 0;
+            scroll-snap-align: start;
         }
         .tl-item::before {
             content: "";
@@ -461,6 +530,27 @@
             color: #d8d0c0;
             line-height: 1.55;
         }
+        /* tablets / narrow windows: smaller horizontal cards */
+        @media (max-width: 1024px) {
+            .tl-item { width: 190px; padding-right: 20px; }
+            .tl-year { font-size: 22px; }
+            .tl-place { font-size: 9.5px; }
+            .tl-text { font-size: 12.5px; }
+        }
+        /* phones: tighter cards, smaller wrapped text */
+        @media (max-width: 768px) {
+            .timeline-wrap { margin-top: 32px; }
+            .timeline-wrap::after { width: 56px; }
+            .tl-item { width: 164px; padding: 20px 18px 0 0; }
+            .tl-year { font-size: 19px; }
+            .tl-place { font-size: 9px; letter-spacing: 0.16em; margin: 6px 0 5px; }
+            .tl-text { font-size: 11.5px; line-height: 1.5; }
+        }
+        @media (max-width: 480px) {
+            .tl-item { width: 150px; padding-right: 16px; }
+            .tl-item::after { width: 6px; height: 6px; }
+            .tl-text { font-size: 11px; }
+        }
 
         /* ---------- research links ---------- */
         .link-grid {
@@ -495,7 +585,6 @@
             color: var(--cream-dim);
         }
         .link-card .arrow {
-            font-family: var(--serif);
             font-size: 20px;
             color: var(--gold);
             transition: transform 0.35s ease;
@@ -510,7 +599,10 @@
             background: var(--line);
             border: 1px solid var(--line);
         }
-        @media (max-width: 700px) { .facts-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 700px) {
+            .facts-grid { grid-template-columns: 1fr; }
+            .fact-cell { padding: 24px 20px; }
+        }
         .fact-cell {
             background: var(--ink-2);
             padding: 30px 30px;
@@ -535,7 +627,12 @@
         }
         .fact-cell li:last-child { border-bottom: none; }
         .fact-cell li::before {
-            content: "▹";
+            content: "chevron_right";
+            font-family: 'Material Symbols Outlined';
+            font-weight: 300;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+            font-size: 16px;
+            line-height: 1.5;
             color: var(--gold);
             flex-shrink: 0;
         }
@@ -546,7 +643,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
-        @media (max-width: 800px) { .doc-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 800px) { .doc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
         .doc-card {
             position: relative;
             display: block;
@@ -736,10 +833,29 @@
                 overflow-x: auto;
                 overflow-y: hidden;
                 max-height: none;
+                padding-right: 0;
                 padding-bottom: 8px;
+                scroll-snap-type: x proximity;
+                -webkit-overflow-scrolling: touch;
             }
-            .loc-item { min-width: 230px; flex-shrink: 0; }
+            .loc-item {
+                min-width: 190px;
+                max-width: 190px;
+                flex-shrink: 0;
+                padding: 11px 14px;
+                scroll-snap-align: start;
+            }
+            .loc-item .name { font-size: 15px; }
+            .loc-item .note { font-size: 11px; }
             .loc-map { min-height: 340px; }
+        }
+        @media (max-width: 640px) {
+            .loc-tabs { gap: 8px; margin-bottom: 18px; }
+            .loc-tab { padding: 9px 14px; letter-spacing: 0.14em; font-size: 10px; }
+            .loc-map { min-height: 300px; }
+            .loc-map .caption { padding: 9px 14px; }
+            .loc-map .caption .place { font-size: 15px; }
+            .loc-map .caption .note { font-size: 11px; }
         }
 
         /* ---------- services ---------- */
@@ -748,7 +864,10 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
-        @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 760px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 28px 24px; }
+        }
         .form-card {
             border: 1px solid var(--line);
             background: var(--ink-3);
@@ -948,7 +1067,7 @@
             <h1 class="hero-title">Ly<span class="accent">e</span>t</h1>
             <p class="hero-sub">Tracing the journey of a name across continents</p>
             <div class="hero-meta">
-                <div>Est. <span>1592</span></div>
+                <div>Est. <span>1758</span></div>
                 <div>Franche-Comté <span>·</span> France</div>
                 <div>Fewer than <span>1,000</span> worldwide</div>
             </div>
@@ -1003,17 +1122,19 @@
             </div>
             <div class="lede reveal">
                 <p>
-                    Rooted in the farming villages of <em>Franche-Comté</em>, first recorded in England in <em>1592</em> and in France in <em>1758</em>, the Lyet name crossed the Atlantic in the mid-1800s and took hold in Philadelphia. Four centuries on, fewer than a thousand Lyets remain worldwide.
+                    Rooted in the farming villages of <em>Franche-Comté</em> and first recorded there in <em>1758</em>, the Lyet name crossed the Atlantic in the 1800s, took hold in Philadelphia, and settled in Lancaster, Pennsylvania in 1945. Today fewer than a thousand Lyets remain worldwide — just 192 of them in France.
                 </p>
                 <button class="btn" id="storyOpen">Read the Full Story</button>
             </div>
 
             <!-- Timeline -->
-            <div class="timeline reveal">
+            <div class="timeline-wrap reveal">
+                <div class="tl-hint" aria-hidden="true">Scroll <span class="material-symbols-outlined">arrow_right_alt</span></div>
+                <div class="timeline">
                 <div class="tl-item">
                     <div class="tl-year">1592</div>
                     <div class="tl-place">Manston, Dorset</div>
-                    <div class="tl-text">Elizabeth Lyet is born — the earliest record of the name anywhere. She lives 96 years.</div>
+                    <div class="tl-text">Elizabeth Lyet is born — the earliest record of the spelling anywhere, though the English thread is likely unrelated to the French line.</div>
                 </div>
                 <div class="tl-item">
                     <div class="tl-year">1758</div>
@@ -1038,17 +1159,28 @@
                 <div class="tl-item">
                     <div class="tl-year">1917</div>
                     <div class="tl-place">Philadelphia</div>
-                    <div class="tl-text">J. Paul Lyet II is born; he rises to become chairman of Sperry Corporation.</div>
+                    <div class="tl-text">J. Paul Lyet II is born in north Philadelphia to French immigrant parents.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1945</div>
+                    <div class="tl-place">Lancaster, Pennsylvania</div>
+                    <div class="tl-text">J. Paul Lyet II marries Dorothy Storz and moves to Lancaster as comptroller of the New Holland Machine Company.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">1972</div>
+                    <div class="tl-place">Sperry Corporation</div>
+                    <div class="tl-text">J. Paul Lyet II becomes chairman and CEO; revenues triple during his decade at the top.</div>
                 </div>
                 <div class="tl-item">
                     <div class="tl-year">1983</div>
                     <div class="tl-place">United States</div>
-                    <div class="tl-text">J. Paul Lyet II receives the Horatio Alger Award.</div>
+                    <div class="tl-text">J. Paul Lyet II receives the Horatio Alger Award, a year after retiring from Sperry.</div>
                 </div>
                 <div class="tl-item">
                     <div class="tl-year">Today</div>
                     <div class="tl-place">Worldwide</div>
                     <div class="tl-text">Fewer than 1,000 Lyets across France, Germany, and the United States.</div>
+                </div>
                 </div>
             </div>
 
@@ -1063,28 +1195,28 @@
                         <h4>Forebears — LYET</h4>
                         <p>Global surname distribution and statistics</p>
                     </div>
-                    <span class="arrow">↗</span>
+                    <span class="arrow material-symbols-outlined" aria-hidden="true">arrow_outward</span>
                 </a>
                 <a href="https://en.geneanet.org/genealogy/lyet/LYET" target="_blank" class="link-card">
                     <div>
                         <h4>Geneanet — LYET</h4>
                         <p>Family tree and historical records database</p>
                     </div>
-                    <span class="arrow">↗</span>
+                    <span class="arrow material-symbols-outlined" aria-hidden="true">arrow_outward</span>
                 </a>
                 <a href="https://www.ancestry.com/genealogy/records/results?lastName=lyet" target="_blank" class="link-card">
                     <div>
                         <h4>Ancestry — LYET</h4>
                         <p>Genealogical records and family history</p>
                     </div>
-                    <span class="arrow">↗</span>
+                    <span class="arrow material-symbols-outlined" aria-hidden="true">arrow_outward</span>
                 </a>
                 <a href="https://www.nomdefamille.eu/en/index.php?sur=lyet&s=Search" target="_blank" class="link-card">
                     <div>
                         <h4>Nom de Famille — LYET</h4>
                         <p>French surname origins and distribution</p>
                     </div>
-                    <span class="arrow">↗</span>
+                    <span class="arrow material-symbols-outlined" aria-hidden="true">arrow_outward</span>
                 </a>
             </div>
 
@@ -1097,19 +1229,21 @@
                 <div class="fact-cell">
                     <h4>By the Numbers</h4>
                     <ul>
-                        <li>Global rarity rank: #1,125,333</li>
-                        <li>Estimated Lyets worldwide: Fewer than 1,000</li>
-                        <li>First recorded: 1592, Manston, Dorset, England</li>
+                        <li>Global rarity rank: #1,125,333 — roughly 1 in 33.9 million people</li>
+                        <li>Estimated Lyets worldwide: Fewer than 1,000, with 91% in Europe</li>
+                        <li>In France: 192 bearers — 56% in Bourgogne-Franche-Comté, 19% Île-de-France, 13% Occitanie</li>
                         <li>Earliest French Lyet: 1758, Routelle, Franche-Comté</li>
+                        <li>Earliest spelling anywhere: 1592, Manston, Dorset — likely an unrelated English line</li>
                     </ul>
                 </div>
                 <div class="fact-cell">
                     <h4>Historical Notes</h4>
                     <ul>
-                        <li>Known regions: Eastern France, Germany, England, and the USA</li>
-                        <li>American Lyets: Spread across Pennsylvania, New Jersey, Ohio, and California</li>
-                        <li>Longest-lived: Elizabeth Lyet (1592–1688), 96 years in 17th-century England</li>
-                        <li>Notable achievement: J. Paul Lyet, Chairman of Sperry Corp and Horatio Alger Award Recipient, Class of 1983</li>
+                        <li>Heartland: the Doubs valley of Franche-Comté — the home region of Comté cheese</li>
+                        <li>Spelling variants in French records: Liet, Lie, Lier, Lye, and Liat</li>
+                        <li>Possible meaning: an Old French root for joy or high spirits — unverified folk etymology</li>
+                        <li>American Lyets: Spread across Pennsylvania, New Jersey, Connecticut, Ohio, and Arizona</li>
+                        <li>Notable achievement: J. Paul Lyet II, Chairman &amp; CEO of Sperry Corp and Horatio Alger Award Recipient, Class of 1983</li>
                     </ul>
                 </div>
                 <div class="fact-cell">
@@ -1127,7 +1261,27 @@
                         <li>Nicolas François Lyet (c. 1824–1898): emigrated from France, died in Philadelphia</li>
                         <li>Louis Claude Lyet: born in Paris, 1855; settled in Philadelphia</li>
                         <li>Four generations recorded in Philadelphia, from the 1880s to the 1980s</li>
-                        <li>Dorothy Lyet: raised in Pleidelsheim, Germany, before immigrating to the USA</li>
+                        <li>Since 1945 the family has been centered on Lancaster, Pennsylvania</li>
+                    </ul>
+                </div>
+                <div class="fact-cell">
+                    <h4>The Sperry Years</h4>
+                    <ul>
+                        <li>Wharton evening school of accounting, Class of 1941; CPA at Ernst &amp; Ernst</li>
+                        <li>Comptroller of the New Holland Machine Co.; Sperry acquired the firm in 1946</li>
+                        <li>Executive VP 1970 — President 1971 — Chairman &amp; CEO 1972–1982</li>
+                        <li>Revenues tripled from $1.8 to $5.6 billion during his decade at the top</li>
+                        <li>Chaired the President's Export Council under Presidents Carter and Reagan</li>
+                        <li>Director: Eastman Kodak, Eli Lilly, Con Edison, Armstrong, NL Industries, Hershey Trust</li>
+                    </ul>
+                </div>
+                <div class="fact-cell">
+                    <h4>Open Questions</h4>
+                    <ul>
+                        <li>The parents of J. Paul Lyet II — an indexed record vs. the trumpet-player account; the 1920/1930 Philadelphia census should settle it</li>
+                        <li>The ship manifest: which Lyets crossed from France, and when</li>
+                        <li>Dorothy (Storz) Lyet's early years — Philadelphia native per her obituary; family records place time in Pleidelsheim, Germany</li>
+                        <li>The 1592 English Lyets of Dorset: related line or coincidental spelling?</li>
                     </ul>
                 </div>
             </div>
@@ -1280,7 +1434,7 @@
     <footer>
         <div class="wrap">
             <div class="wordmark">Ly<span>e</span>t</div>
-            <p>Four centuries. Three continents. Fewer than a thousand of us.</p>
+            <p>From the Doubs valley to Lancaster. Fewer than a thousand of us.</p>
         </div>
     </footer>
 
@@ -1288,21 +1442,24 @@
     <div class="modal" id="storyModal" hidden>
         <div class="modal-backdrop" data-close></div>
         <div class="modal-panel">
-            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <button class="modal-close" data-close aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
             <p class="eyebrow">The Full Story</p>
             <h3>Origins of the <em>Name</em></h3>
             <div class="story">
                 <p>
-                    The Lyet story is rooted in Franche-Comté, in eastern France — a region of limestone hills, river valleys, and small farming villages along the Doubs. The earliest French record of the name dates to 1758, in the village of Routelle, and for generations afterward the family appears in the registers of the surrounding countryside: Osselle, Lantenne, Cléron, Fourg, and the regional capital of Besançon.
+                    The Lyet story is rooted in Franche-Comté, in eastern France — a region of limestone hills, river valleys, and small farming and dairy villages along the Doubs. The earliest French record of the name dates to 1758, in the village of Routelle, and for generations afterward the family appears in the registers of the surrounding countryside: Osselle, Lantenne, Cléron, Fourg, and the regional capital of Besançon. The name remains anchored there today — of the 192 Lyets in France, more than half still live in Bourgogne-Franche-Comté.
                 </p>
                 <p>
-                    The records describe quiet, rooted lives. Marie Pélagie Lyet was born in Osselle in 1861 and died in 1938 in Pirey, only a few kilometers away. Marie Françoise Lyet was born in Besançon in 1841; Jean-François Lyet and his descendants appear in the same parish records through the nineteenth century. The name's origin is uncertain, though it is thought to come from an Old French root associated with joy or high spirits. An older thread runs through England: the earliest record of the name anywhere is Elizabeth Lyet, born in 1592 in Manston, Dorset, who lived ninety-six years.
+                    The records describe quiet, rooted lives. Marie Pélagie Lyet was born in Osselle in 1861 and died in 1938 in Pirey, only a few kilometers away. Marie Françoise Lyet was born in Besançon in 1841; Jean-François Lyet and his descendants appear in the same parish records through the nineteenth century, under spellings that drift between Lyet, Liet, Lye, and Liat. The name's origin is uncertain — a popular account traces it to an Old French root associated with joy or high spirits, though this remains unverified folk etymology. An older English thread, Elizabeth Lyet of Manston, Dorset, born 1592, was long taken as the earliest record of the name, but is now believed to be a coincidental spelling unrelated to the French family.
                 </p>
                 <p>
-                    In the mid-nineteenth century, the name crossed the Atlantic. Nicolas François Lyet, born in France around 1824, died in Philadelphia in 1898; his son Louis Claude, born in Paris in 1855, made the same journey and settled there. From that foothold the family spread through Pennsylvania, New Jersey, Connecticut, and Ohio, with four generations recorded in Philadelphia between the 1880s and the 1980s. Among them was J. Paul Lyet II (1917–1984), who rose from north Philadelphia to become chairman of Sperry Corporation and a Horatio Alger Award recipient in 1983.
+                    In the mid-nineteenth century, the name crossed the Atlantic. Nicolas François Lyet, born in France around 1824, died in Philadelphia in 1898; his son Louis Claude, born in Paris in 1855, made the same journey and settled there. From that foothold the family spread through Pennsylvania, New Jersey, Connecticut, and Ohio, with four generations recorded in Philadelphia between the 1880s and the 1980s. Exactly how this line connects to the next chapter is the last open question in the family's research — the ship manifests and Philadelphia census pages that would close the gap are still being pulled.
                 </p>
                 <p>
-                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today, spread across France, Germany, and the United States — a small family carrying a name that has now survived more than four centuries of written records.
+                    That next chapter belongs to J. Paul Lyet II (1917–1984). Born in north Philadelphia to French immigrant parents — his father remembered as a professional trumpet player, his mother a telephone operator — he grew up poor after his parents divorced when he was eight, worked a factory floor and sold real estate to pay his way through Wharton's evening school of accounting, and graduated in 1941. In 1945 he married Dorothy Storz and moved to Lancaster, Pennsylvania as comptroller of the New Holland Machine Company; when Sperry acquired the firm a year later, his rise began — executive vice president in 1970, president in 1971, chairman and chief executive in 1972. In his decade at the top, Sperry's revenues tripled from $1.8 to $5.6 billion, and he chaired the President's Export Council under both Carter and Reagan. He received the Horatio Alger Award in 1983, a year after retiring.
+                </p>
+                <p>
+                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today — nine in ten of them in Europe — with the American family still centered on Lancaster, where Paul and Dorothy raised five children and the line now runs to a fourth Jean Paul Lyet.
                 </p>
             </div>
         </div>
@@ -1312,7 +1469,7 @@
     <div class="modal" id="docModal" hidden>
         <div class="modal-backdrop" data-close></div>
         <div class="modal-panel lightbox">
-            <button class="modal-close" data-close aria-label="Close">&times;</button>
+            <button class="modal-close" data-close aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
             <img id="lbImage" src="" alt="">
             <div class="lb-caption" id="lbCaption"></div>
         </div>
@@ -1323,6 +1480,14 @@
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // Timeline scroll affordance: hide the hint once scrolled, hide the fade at the end
+        const tlWrap = document.querySelector('.timeline-wrap');
+        const tl = tlWrap.querySelector('.timeline');
+        tl.addEventListener('scroll', () => {
+            tlWrap.classList.add('scrolled');
+            tlWrap.classList.toggle('at-end', tl.scrollLeft + tl.clientWidth >= tl.scrollWidth - 8);
         }, { passive: true });
 
         // Reveal-on-scroll
@@ -1385,18 +1550,21 @@
                 { name: 'Paris', note: 'Louis Claude Lyet and Maurice Léon Lyet', q: 'Paris,+France' }
             ],
             'Germany': [
-                { name: 'Pleidelsheim', note: 'Childhood home of Dorothy Lyet before immigrating to USA', q: 'Pleidelsheim,+Germany' }
+                { name: 'Pleidelsheim', note: 'Family records place part of Dorothy (Storz) Lyet’s upbringing here — still being reconciled with her Philadelphia records', q: 'Pleidelsheim,+Germany' }
             ],
             'United States': [
+                { name: 'Lancaster, Pennsylvania', note: 'Family home since 1945, when J. Paul Lyet II joined the New Holland Machine Co.', q: 'Lancaster,+PA' },
                 { name: 'Robert Morris High School', note: 'High School of Jean Paul Lyet II', q: '2600+W+Thompson+St,+Philadelphia,+PA+19121' },
                 { name: '2729 Brown Street', note: 'Home of Jean Paul Lyet II', q: '2729+Brown+Street,+Philadelphia,+PA' },
                 { name: '1531 North Robinson Street', note: 'Childhood home of Dorothy Lyet', q: '1531+North+Robinson+Street,+Philadelphia,+PA' },
                 { name: 'Palatinate Reformed Church', note: 'Wedding location of J.P. Lyet II and Dorothy Lyet', q: '6122+Haverford+Ave,+Philadelphia,+PA+19151' },
                 { name: 'Leitners Florists', note: 'Florist for the wedding of J.P. Lyet II and Dorothy Lyet', q: '2831+Girard+Ave,+Philadelphia,+PA' },
-                { name: 'Bellevue Stratford', note: 'Reception location for J.P. Lyet II and Dorothy Lyet', q: 'Bellevue+Stratford,+Philadelphia,+PA' }
+                { name: 'Bellevue Stratford', note: 'Reception location for J.P. Lyet II and Dorothy Lyet', q: 'Bellevue+Stratford,+Philadelphia,+PA' },
+                { name: 'New Holland, Pennsylvania', note: 'The New Holland Machine Co. — acquired by Sperry in 1946, the start of J.P. Lyet II’s rise', q: 'New+Holland,+PA' },
+                { name: 'Peoria, Arizona', note: 'Later home of Henri William Lyet (1912–2000), brother of J.P. Lyet II', q: 'Peoria,+AZ' }
             ],
             'United Kingdom': [
-                { name: 'Manston, Dorset', note: 'Elizabeth Lyet, 1592', q: 'Manston,+Dorset,+England' },
+                { name: 'Manston, Dorset', note: 'Elizabeth Lyet, 1592 — likely an unrelated English line', q: 'Manston,+Dorset,+England' },
                 { name: 'Dorchester, Dorset', note: 'Elizabeth Lyet, 1688', q: 'Dorchester,+UK' },
                 { name: 'Exeter, Devon', note: 'Elizabeth Lyet, 1688–1759', q: 'Exeter,+Devon,+England' },
                 { name: 'Scotland', note: 'Christian Lyet (1700 origin)', q: 'Scotland' }
