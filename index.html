@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyet — Est. 1758</title>
+    <title>Lyet — Est. 1592</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -150,8 +150,8 @@
             nav { padding: 16px 0; }
             nav .wrap { padding: 0 16px; }
             .nav-inner { gap: 16px; }
-            .nav-links { gap: 14px; }
-            .nav-links a { font-size: 9.5px; letter-spacing: 0.1em; }
+            .nav-links { gap: 11px; }
+            .nav-links a { font-size: 9.5px; letter-spacing: 0.07em; }
             .wordmark { font-size: 16px; letter-spacing: 0.18em; }
         }
         @media (max-width: 360px) {
@@ -718,6 +718,157 @@
             color: var(--cream-dim);
         }
 
+        /* ---------- people dossiers ---------- */
+        .section-note {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 15px;
+            color: var(--cream-dim);
+            max-width: 640px;
+            margin: -18px auto 34px;
+            text-align: center;
+        }
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+        @media (max-width: 900px) { .people-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .people-grid { grid-template-columns: 1fr; } }
+        .pcard {
+            position: relative;
+            text-align: left;
+            border: 1px solid var(--line);
+            background: var(--ink-3);
+            padding: 18px 20px 16px;
+            cursor: pointer;
+            color: var(--cream);
+            font-family: var(--sans);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .pcard:hover { border-color: var(--gold); background: rgba(201, 168, 106, 0.05); }
+        .pc-name {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.25;
+            padding-right: 24px;
+        }
+        .pc-dates {
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            color: var(--gold);
+            margin-top: 4px;
+        }
+        .pc-blurb {
+            font-size: 12px;
+            color: var(--cream-dim);
+            line-height: 1.5;
+            margin-top: 7px;
+        }
+        .pcard > .material-symbols-outlined {
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 15px;
+            color: var(--gold);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .pcard:hover > .material-symbols-outlined { opacity: 1; }
+
+        .dossier-dates {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: -18px 0 24px;
+        }
+        .dossier dl {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 9px 18px;
+            border-top: 1px solid var(--line);
+            padding-top: 18px;
+            margin-bottom: 22px;
+        }
+        .dossier dt {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding-top: 3px;
+        }
+        .dossier dd {
+            font-size: 14px;
+            color: #d8d0c0;
+            line-height: 1.55;
+        }
+        .dossier .p-link {
+            display: inline;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            color: var(--gold-bright);
+            cursor: pointer;
+            border-bottom: 1px dashed rgba(201, 168, 106, 0.5);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .dossier .p-link:hover {
+            color: var(--cream);
+            border-bottom-color: var(--gold);
+        }
+        .dossier .d-flag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px dashed rgba(201, 168, 106, 0.5);
+            padding: 2px 8px;
+            margin-bottom: 16px;
+        }
+        .dossier p {
+            font-size: 14px;
+            color: #d8d0c0;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+        .dossier p:last-child { margin-bottom: 0; }
+        .d-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+            margin-top: 20px;
+        }
+        .d-links a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--gold-bright);
+            transition: color 0.3s ease;
+        }
+        .d-links a:hover { color: var(--cream); }
+        .d-links a .material-symbols-outlined { font-size: 15px; color: var(--gold); }
+        .d-videos {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        @media (max-width: 560px) {
+            .dossier dl { grid-template-columns: 1fr; gap: 1px 0; }
+            .dossier dt { margin-top: 10px; }
+        }
+
         /* ---------- locations explorer ---------- */
         .loc-tabs {
             display: flex;
@@ -826,8 +977,43 @@
             font-size: 12px;
             color: var(--cream-dim);
         }
+        .loc-scroll {
+            position: relative;
+            min-width: 0;
+        }
+        .loc-hint { display: none; }
         @media (max-width: 860px) {
             .loc-body { grid-template-columns: 1fr; }
+            .loc-hint {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 5px;
+                margin-bottom: 10px;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--gold);
+                transition: opacity 0.4s ease;
+            }
+            .loc-hint .material-symbols-outlined {
+                font-size: 15px;
+                animation: nudge 2.2s ease-in-out infinite;
+            }
+            .loc-scroll::after {
+                content: "";
+                position: absolute;
+                top: 30px; right: 0; bottom: 8px;
+                width: 56px;
+                background: linear-gradient(to right, transparent, var(--ink));
+                pointer-events: none;
+                transition: opacity 0.35s ease;
+            }
+            .loc-scroll.scrolled .loc-hint,
+            .loc-scroll.no-scroll .loc-hint { opacity: 0; }
+            .loc-scroll.at-end::after,
+            .loc-scroll.no-scroll::after { opacity: 0; }
             .loc-list {
                 flex-direction: row;
                 overflow-x: auto;
@@ -1050,9 +1236,10 @@
             <a href="#" class="wordmark">Ly<span>e</span>t</a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#documents">Documents</a>
+                <a href="#people">People</a>
                 <a href="#locations">Locations</a>
-                <a href="#services">Services</a>
+                <a href="#documents">Archive</a>
+                <a href="#connect">Connect</a>
             </div>
         </div>
     </nav>
@@ -1067,7 +1254,7 @@
             <h1 class="hero-title">Ly<span class="accent">e</span>t</h1>
             <p class="hero-sub">Tracing the journey of a name across continents</p>
             <div class="hero-meta">
-                <div>Est. <span>1758</span></div>
+                <div>Est. <span>1592</span></div>
                 <div>Franche-Comté <span>·</span> France</div>
                 <div>Fewer than <span>1,000</span> worldwide</div>
             </div>
@@ -1240,49 +1427,76 @@
                     <h4>Historical Notes</h4>
                     <ul>
                         <li>Heartland: the Doubs valley of Franche-Comté — the home region of Comté cheese</li>
+                        <li>Village records: Routelle, Osselle, Lantenne, Cléron, Fourg, Devecey, and Besançon</li>
                         <li>Spelling variants in French records: Liet, Lie, Lier, Lye, and Liat</li>
                         <li>Possible meaning: an Old French root for joy or high spirits — unverified folk etymology</li>
-                        <li>American Lyets: Spread across Pennsylvania, New Jersey, Connecticut, Ohio, and Arizona</li>
-                        <li>Notable achievement: J. Paul Lyet II, Chairman &amp; CEO of Sperry Corp and Horatio Alger Award Recipient, Class of 1983</li>
                     </ul>
                 </div>
                 <div class="fact-cell">
-                    <h4>The French Line</h4>
+                    <h4>Migration</h4>
                     <ul>
-                        <li>Home region: the Doubs valley, Franche-Comté</li>
-                        <li>Village records: Routelle, Osselle, Lantenne, Cléron, Fourg, and Devecey</li>
-                        <li>Marie Pélagie Lyet (1861–1938): born in Osselle, lived her whole life in the Doubs</li>
-                        <li>Paris records: Louis Claude Lyet (b. 1855) and Maurice Léon Lyet (b. 1877)</li>
-                    </ul>
-                </div>
-                <div class="fact-cell">
-                    <h4>The Atlantic Crossing</h4>
-                    <ul>
-                        <li>Nicolas François Lyet (c. 1824–1898): emigrated from France, died in Philadelphia</li>
-                        <li>Louis Claude Lyet: born in Paris, 1855; settled in Philadelphia</li>
-                        <li>Four generations recorded in Philadelphia, from the 1880s to the 1980s</li>
-                        <li>Since 1945 the family has been centered on Lancaster, Pennsylvania</li>
-                    </ul>
-                </div>
-                <div class="fact-cell">
-                    <h4>The Sperry Years</h4>
-                    <ul>
-                        <li>Wharton evening school of accounting, Class of 1941; CPA at Ernst &amp; Ernst</li>
-                        <li>Comptroller of the New Holland Machine Co.; Sperry acquired the firm in 1946</li>
-                        <li>Executive VP 1970 — President 1971 — Chairman &amp; CEO 1972–1982</li>
-                        <li>Revenues tripled from $1.8 to $5.6 billion during his decade at the top</li>
-                        <li>Chaired the President's Export Council under Presidents Carter and Reagan</li>
-                        <li>Director: Eastman Kodak, Eli Lilly, Con Edison, Armstrong, NL Industries, Hershey Trust</li>
+                        <li>The name crossed the Atlantic in the mid-1800s and took hold in Philadelphia</li>
+                        <li>Four generations recorded in Philadelphia between the 1880s and the 1980s</li>
+                        <li>American records span Pennsylvania, New Jersey, Connecticut, Ohio, and Arizona</li>
+                        <li>Since 1945 the American family has been centered on Lancaster County, Pennsylvania</li>
                     </ul>
                 </div>
                 <div class="fact-cell">
                     <h4>Open Questions</h4>
                     <ul>
-                        <li>The parents of J. Paul Lyet II — an indexed record vs. the trumpet-player account; the 1920/1930 Philadelphia census should settle it</li>
-                        <li>The ship manifest: which Lyets crossed from France, and when</li>
-                        <li>Dorothy (Storz) Lyet's early years — Philadelphia native per her obituary; family records place time in Pleidelsheim, Germany</li>
+                        <li>How the Doubs village lines connect to the Philadelphia immigrants — ship manifests and census work pending</li>
                         <li>The 1592 English Lyets of Dorset: related line or coincidental spelling?</li>
+                        <li>Scattered French records — Paris, Damparis, Besançon — not yet linked into one tree</li>
+                        <li>Open questions on individual records are noted in each dossier under The People</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Section -->
+    <section id="people" class="alt">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-num">II</span>
+                <p class="eyebrow">Chapter Two</p>
+                <h2 class="section-title">The <em>People</em></h2>
+                <div class="rule"></div>
+            </div>
+            <p class="section-note reveal">
+                Every Lyet found in the records so far — a working dossier on each, gathered from parish registers, census indexes, and obituaries. As research confirms the links between them, these entries will grow into a single tree.
+            </p>
+            <div class="reveal">
+                <div class="loc-tabs" id="peopleTabs"></div>
+                <div class="people-grid" id="peopleGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-num">III</span>
+                <p class="eyebrow">Chapter Three</p>
+                <h2 class="section-title">Historical <em>Locations</em></h2>
+                <div class="rule"></div>
+            </div>
+
+            <div class="reveal">
+                <div class="loc-tabs" id="locTabs"></div>
+                <div class="loc-body">
+                    <div class="loc-scroll" id="locScroll">
+                        <div class="loc-hint" aria-hidden="true">Scroll <span class="material-symbols-outlined">arrow_right_alt</span></div>
+                        <div class="loc-list" id="locList"></div>
+                    </div>
+                    <div class="loc-map">
+                        <iframe id="locFrame" allowfullscreen loading="lazy" title="Location map"></iframe>
+                        <div class="caption">
+                            <div class="place" id="locPlace"></div>
+                            <div class="note" id="locNote"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1292,8 +1506,8 @@
     <section id="documents" class="alt">
         <div class="wrap">
             <div class="section-head reveal">
-                <span class="section-num">II</span>
-                <p class="eyebrow">Chapter Two</p>
+                <span class="section-num">IV</span>
+                <p class="eyebrow">Chapter Four</p>
                 <h2 class="section-title">The <em>Archive</em></h2>
                 <div class="rule"></div>
             </div>
@@ -1329,101 +1543,43 @@
                 </a>
             </div>
 
-            <div class="sub-head reveal">
-                <h3>Family Videos</h3>
-                <div class="line"></div>
-            </div>
-            <div class="video-grid reveal">
-                <div class="video-card">
-                    <iframe
-                        src="https://www.youtube.com/embed/h3e8Nqefx8M"
-                        title="Computer History Archives Project"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-card">
-                    <iframe
-                        src="https://www.youtube.com/embed/_5TNVD_RiZs"
-                        title="Reagan Library Video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-card">
-                    <video controls>
-                        <source src="https://digital.hagley.org/islandora/object/islandora%3A2578820/datastream/MP4/view" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="caption">
-                        Sperry Commercial (1979)
-                        <div class="sub">Chairman J. Paul Lyet on the importance of listening</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Locations Section -->
-    <section id="locations">
+    <!-- Connect Section -->
+    <section id="connect">
         <div class="wrap">
             <div class="section-head reveal">
-                <span class="section-num">III</span>
-                <p class="eyebrow">Chapter Three</p>
-                <h2 class="section-title">Historical <em>Locations</em></h2>
-                <div class="rule"></div>
-            </div>
-
-            <div class="reveal">
-                <div class="loc-tabs" id="locTabs"></div>
-                <div class="loc-body">
-                    <div class="loc-list" id="locList"></div>
-                    <div class="loc-map">
-                        <iframe id="locFrame" allowfullscreen loading="lazy" title="Location map"></iframe>
-                        <div class="caption">
-                            <div class="place" id="locPlace"></div>
-                            <div class="note" id="locNote"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="alt">
-        <div class="wrap">
-            <div class="section-head reveal">
-                <span class="section-num">IV</span>
-                <p class="eyebrow">Chapter Four</p>
-                <h2 class="section-title">Serv<em>ices</em></h2>
+                <span class="section-num">V</span>
+                <p class="eyebrow">Chapter Five</p>
+                <h2 class="section-title">Con<em>nect</em></h2>
                 <div class="rule"></div>
             </div>
 
             <div class="form-grid reveal">
                 <div class="form-card">
-                    <h3>Contact A Lyet</h3>
-                    <p class="form-note">Questions, corrections, or family records to share — every branch of the tree is welcome.</p>
-                    <form>
+                    <h3>Contact a Lyet</h3>
+                    <p class="form-note">Questions, corrections, or family records to share — every branch of the tree is welcome. Sending opens your email app.</p>
+                    <form id="contactForm">
                         <div class="fields">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email">
-                            <textarea placeholder="Message"></textarea>
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message" required></textarea>
                         </div>
-                        <button class="btn">Send</button>
+                        <button class="btn" type="submit">Send</button>
                     </form>
                 </div>
                 <div class="form-card">
-                    <h3>Schedule With A Lyet</h3>
-                    <p class="form-note">Arrange a time to talk family history.</p>
-                    <form>
+                    <h3>Schedule with a Lyet</h3>
+                    <p class="form-note">Arrange a time to talk family history. Sending opens your email app.</p>
+                    <form id="scheduleForm">
                         <div class="fields">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email">
-                            <input type="date">
-                            <input type="time">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <input type="date" name="date" required>
+                            <input type="time" name="time" required>
                         </div>
-                        <button class="btn">Request</button>
+                        <button class="btn" type="submit">Request</button>
                     </form>
                 </div>
             </div>
@@ -1434,7 +1590,7 @@
     <footer>
         <div class="wrap">
             <div class="wordmark">Ly<span>e</span>t</div>
-            <p>From the Doubs valley to Lancaster. Fewer than a thousand of us.</p>
+            <p>From the Doubs valley to the wider world. Fewer than a thousand of us.</p>
         </div>
     </footer>
 
@@ -1459,9 +1615,20 @@
                     That next chapter belongs to J. Paul Lyet II (1917–1984). Born in north Philadelphia to French immigrant parents — his father remembered as a professional trumpet player, his mother a telephone operator — he grew up poor after his parents divorced when he was eight, worked a factory floor and sold real estate to pay his way through Wharton's evening school of accounting, and graduated in 1941. In 1945 he married Dorothy Storz and moved to Lancaster, Pennsylvania as comptroller of the New Holland Machine Company; when Sperry acquired the firm a year later, his rise began — executive vice president in 1970, president in 1971, chairman and chief executive in 1972. In his decade at the top, Sperry's revenues tripled from $1.8 to $5.6 billion, and he chaired the President's Export Council under both Carter and Reagan. He received the Horatio Alger Award in 1983, a year after retiring.
                 </p>
                 <p>
-                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today — nine in ten of them in Europe — with the American family still centered on Lancaster, where Paul and Dorothy raised five children and the line now runs to a fourth Jean Paul Lyet.
+                    Through all of it, the name has stayed genuinely rare. Fewer than a thousand Lyets are estimated worldwide today — nine in ten of them in Europe — a scattering of families across France, Germany, and the United States, each carrying a piece of the same long story.
                 </p>
             </div>
+        </div>
+    </div>
+
+    <!-- Person Dossier Modal -->
+    <div class="modal" id="personModal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel">
+            <button class="modal-close" data-close aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            <p class="eyebrow">Dossier</p>
+            <h3 id="dossierName"></h3>
+            <div class="dossier" id="dossierBody"></div>
         </div>
     </div>
 
@@ -1509,6 +1676,9 @@
         function closeModal(m) {
             m.hidden = true;
             document.body.style.overflow = '';
+            // stop any playing dossier video
+            if (m.id === 'personModal')
+                m.querySelectorAll('iframe, video').forEach((el) => el.remove());
         }
         document.querySelectorAll('.modal').forEach((m) => {
             m.querySelectorAll('[data-close]').forEach((el) =>
@@ -1535,6 +1705,556 @@
                 openModal(docModal);
             });
         });
+
+        // ---------- Connect forms ----------
+        // Static site, no backend: submitting opens the visitor's own
+        // email app with the message prefilled.
+        const CONTACT_EMAIL = 'jpl808@gmail.com';
+        function openMail(url) { window.location.href = url; }
+        function mailtoUrl(subject, body) {
+            return 'mailto:' + CONTACT_EMAIL +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(body);
+        }
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const f = e.target.elements;
+            openMail(mailtoUrl(
+                'Lyet.com — message from ' + f.name.value,
+                f.message.value + '\n\nFrom: ' + f.name.value + ' <' + f.email.value + '>'
+            ));
+        });
+        document.getElementById('scheduleForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const f = e.target.elements;
+            openMail(mailtoUrl(
+                'Lyet.com — schedule request from ' + f.name.value,
+                'Requested time: ' + f.date.value + ' at ' + f.time.value +
+                '\n\nFrom: ' + f.name.value + ' <' + f.email.value + '>'
+            ));
+        });
+
+        // ---------- People dossiers ----------
+        const PEOPLE = {
+            'France': [
+                {
+                    n: 'Lyet of Routelle', d: '1758 – 1813', pl: 'Routelle → Lantenne',
+                    b: 'The earliest French record of the name',
+                    facts: [
+                        ['Born', 'About 1758, Routelle, Doubs'],
+                        ['Died', 'Before May 1813, Lantenne, Doubs']
+                    ],
+                    notes: ['The unnamed Lyet of the 1758 Routelle register is the earliest French record of the name — the anchor of the Franche-Comté line. In the decades that follow, the registers of the surrounding villages fill with the name.']
+                },
+                {
+                    n: 'Claudine Lyet', d: 'd. 1803', pl: 'Osselle → Fourg',
+                    b: 'Among the earliest recorded Lyets of the Doubs',
+                    facts: [
+                        ['Born', 'Osselle, Doubs — date unrecorded'],
+                        ['Died', '28 May 1803, Fourg, Doubs']
+                    ]
+                },
+                {
+                    id: 'jf-ou-louis',
+                    n: 'Jean-François (ou Louis) Lyet', d: '1798 – 1874', pl: 'Doubs',
+                    b: 'A register entry that preserves two possible given names',
+                    facts: [
+                        ['Born', '1798'],
+                        ['Died', '1874'],
+                        ['Spouse', 'Suzanne (ou Jeanne) Antoine Guinemand']
+                    ],
+                    rels: [
+                        ['Children', ['@anne-claude']]
+                    ],
+                    notes: ['The record carries the name as “Jean-François ou Louis” — the uncertainty is part of the original register, kept here as found.']
+                },
+                {
+                    n: 'Anne Lyet', d: '1807 – 1864', pl: 'Devecey',
+                    b: 'Died in Devecey in the Doubs',
+                    facts: [
+                        ['Born', '1807'],
+                        ['Died', '15 June 1864, Devecey, Doubs']
+                    ]
+                },
+                {
+                    id: 'anne-claude',
+                    n: 'Anne Claude Lyet', d: 'b. 1828', pl: 'Doubs',
+                    b: 'Daughter of Jean-François (ou Louis)',
+                    facts: [
+                        ['Born', '23 September 1828']
+                    ],
+                    rels: [
+                        ['Parents', ['@jf-ou-louis', 'Suzanne (ou Jeanne) Antoine Guinemand']]
+                    ]
+                },
+                {
+                    n: 'Marie Françoise Lyet', d: 'b. 1841', pl: 'Besançon',
+                    b: 'Born in the regional capital of Franche-Comté',
+                    facts: [
+                        ['Born', '27 May 1841, Besançon'],
+                        ['Parents', 'Nicolas Lyet & Marguerite Gasparine Vivet']
+                    ]
+                },
+                {
+                    n: 'Marie Émile Lyet', d: 'b. 1857', pl: 'Cléron',
+                    b: 'Born in the village of Cléron on the Loue',
+                    facts: [
+                        ['Born', '4 May 1857, Cléron, Franche-Comté']
+                    ]
+                },
+                {
+                    n: 'Marie Pélagie Lyet', d: '1861 – 1938', pl: 'Osselle → Pirey',
+                    b: 'A whole life lived within a few kilometers of the Doubs',
+                    facts: [
+                        ['Born', '24 August 1861, Osselle, Doubs'],
+                        ['Died', '2 September 1938, Pirey, Doubs'],
+                        ['Parents', 'Jean Martin Lyet & Appoline Pauline Lachiche']
+                    ]
+                },
+                {
+                    n: 'Marie Augustine Hermance Lyet', d: 'b. 1865', pl: 'France',
+                    b: 'Daughter of Jean François Lyet',
+                    facts: [
+                        ['Born', '1865'],
+                        ['Parents', 'Jean François Lyet & Anne Claude Gauby']
+                    ]
+                },
+                {
+                    n: 'Louis Lyet', d: 'b. 1867', pl: 'France',
+                    b: 'Son of Jean Claude Lyet',
+                    facts: [
+                        ['Born', '12 December 1867'],
+                        ['Parents', 'Jean Claude Lyet & Françoise Salins']
+                    ]
+                },
+                {
+                    n: 'Henri Lyet', d: 'b. 1872', pl: 'France',
+                    b: 'Son of François Lyet',
+                    facts: [
+                        ['Born', '24 July 1872'],
+                        ['Parents', 'François Lyet & Marie Philomène Guinemand']
+                    ]
+                },
+                {
+                    n: 'Maurice Léon Lyet', d: 'b. 1877', pl: 'Paris',
+                    b: 'A Paris record of the name',
+                    facts: [
+                        ['Born', '4 November 1877, Paris'],
+                        ['Mother', 'Annette Fanny Lyet']
+                    ]
+                },
+                {
+                    n: 'Martial Lyet', d: 'c. 1915 – 2000', pl: 'Damparis → Besançon',
+                    b: 'A twentieth-century life in Franche-Comté',
+                    facts: [
+                        ['Born', 'About 1915, Damparis, Franche-Comté'],
+                        ['Died', 'About 2000, Besançon']
+                    ]
+                },
+                {
+                    n: 'René Lyet', d: '1921 – 1965', pl: 'France',
+                    b: 'Son of Léon Lyet',
+                    facts: [
+                        ['Born', 'About 1921'],
+                        ['Died', 'About 1965'],
+                        ['Parents', 'Léon Lyet & Renée Dufeu']
+                    ]
+                }
+            ],
+            'United States': [
+                {
+                    id: 'nicolas-francois',
+                    n: 'Nicolas François Lyet', d: 'c. 1824 – 1898', pl: 'France → Philadelphia',
+                    b: 'Presumed patriarch of the American line', flag: 'Crossing unverified',
+                    facts: [
+                        ['Born', 'About 1824, France'],
+                        ['Died', '22 July 1898, Philadelphia'],
+                        ['Spouse', 'Euphrasie Rosella Meiner']
+                    ],
+                    rels: [
+                        ['Children', ['@louis-claude', '@charles-odile']]
+                    ],
+                    notes: ['The presumed founder of the American line. His Atlantic crossing has not yet been verified against ship manifests — the central open question of the research.']
+                },
+                {
+                    id: 'louis-claude',
+                    n: 'Louis Claude Lyet', d: 'b. 1855', pl: 'Paris → Philadelphia',
+                    b: 'Born in Paris; settled in Philadelphia',
+                    facts: [
+                        ['Born', '22 April 1855, Paris'],
+                        ['Died', 'Philadelphia — a FamilySearch profile for “Louis Lyet, 1854–1917” is likely the same man'],
+                        ['Spouse', 'Julia Cardon']
+                    ],
+                    rels: [
+                        ['Parents', ['@nicolas-francois', 'Euphrasie Rosella Meiner']],
+                        ['Children', ['@charles-1881', '@j-paul-1882', '@louis-ferdinand']]
+                    ],
+                    links: [{ t: 'FamilySearch — Louis Lyet (1854–1917)', u: 'https://www.familysearch.org/tree/person/details/G475-HFM' }]
+                },
+                {
+                    id: 'charles-odile',
+                    n: 'Charles Odile Lyet', d: 'c. 1860 – 1910', pl: 'France → Philadelphia',
+                    b: 'Second son of the immigrant generation',
+                    facts: [
+                        ['Born', 'About 1860, France'],
+                        ['Died', '23 April 1910'],
+                        ['Spouse', 'Philippine Toupence']
+                    ],
+                    rels: [
+                        ['Parents', ['@nicolas-francois', 'Euphrasie Rosella Meiner']],
+                        ['Children', ['@rene-odile', '@caroline']]
+                    ]
+                },
+                {
+                    id: 'charles-1881',
+                    n: 'Charles Lyet', d: '1881 – 1901', pl: 'Philadelphia',
+                    b: 'Died in Philadelphia at nineteen',
+                    facts: [
+                        ['Born', 'October 1881, Pennsylvania'],
+                        ['Died', '5 August 1901, Philadelphia']
+                    ],
+                    rels: [
+                        ['Parents', ['@louis-claude', 'Julia Cardon']]
+                    ]
+                },
+                {
+                    id: 'j-paul-1882',
+                    n: 'J. Paul Lyet', d: '1882 – 1953', pl: 'New York → Philadelphia',
+                    b: 'The first bearer of the J. Paul name',
+                    facts: [
+                        ['Born', '28 December 1882, New York'],
+                        ['Died', '20 November 1953, Philadelphia']
+                    ],
+                    rels: [
+                        ['Parents', ['@louis-claude', 'Julia Cardon']]
+                    ]
+                },
+                {
+                    id: 'henri-1886',
+                    n: 'Henri William Lyet', d: '1886 – 1962', pl: 'Philadelphia',
+                    b: 'A Philadelphia-born Lyet of the same generation',
+                    facts: [
+                        ['Born', '2 March 1886, Philadelphia'],
+                        ['Died', '1962']
+                    ],
+                    rels: [
+                        ['Indexed Son', ['@henri-1912']]
+                    ],
+                    notes: ['One index names him as the father of Henri W. Lyet (1912–2000) — a record still to be reconciled with the family account.']
+                },
+                {
+                    id: 'rene-odile',
+                    n: 'René Odile Lyet', d: '1892 – 1971', pl: 'Philadelphia → Connecticut',
+                    b: 'Carried the line into Connecticut',
+                    facts: [
+                        ['Born', '9 April 1892, Philadelphia'],
+                        ['Died', '12 July 1971, Derby, Connecticut (one index: Ansonia)']
+                    ],
+                    rels: [
+                        ['Parents', ['@charles-odile', 'Philippine Toupence']]
+                    ]
+                },
+                {
+                    id: 'louis-ferdinand',
+                    n: 'Louis Ferdinand Lyet', d: 'b. 1896', pl: 'Philadelphia',
+                    b: 'A key record in the open question of the tree', flag: 'Record under review',
+                    facts: [
+                        ['Born', '20 February 1896, Philadelphia'],
+                        ['Spouse', 'Elizabeth Catherine Fortune']
+                    ],
+                    rels: [
+                        ['Parents', ['@louis-claude', 'Julia Cardon']],
+                        ['Indexed Son', ['@jpl2']]
+                    ],
+                    notes: ['One index records him as the father of J. Paul Lyet II — which conflicts with the Horatio Alger account of a French-immigrant, trumpet-playing father. The 1920 and 1930 Philadelphia census should settle it.']
+                },
+                {
+                    id: 'caroline',
+                    n: 'Caroline Lyet', d: 'b. 1898', pl: 'Philadelphia',
+                    b: 'Daughter of Charles Odile',
+                    facts: [
+                        ['Born', '1898, Philadelphia']
+                    ],
+                    rels: [
+                        ['Parents', ['@charles-odile', 'Philippine Toupence']]
+                    ]
+                },
+                {
+                    id: 'henri-1912',
+                    n: 'Henri William Lyet', d: '1912 – 2000', pl: 'New Jersey → Arizona',
+                    b: 'Veteran; the Lyet of Peoria, Arizona', flag: 'Parentage under review',
+                    facts: [
+                        ['Born', '28 March 1912, New Jersey'],
+                        ['Died', '20 February 2000, at a VA Medical Center, Arizona'],
+                        ['Residence', 'Peoria, Arizona; earlier New Jersey']
+                    ],
+                    rels: [
+                        ['Brother', ['@jpl2']],
+                        ['Indexed Parents', ['@henri-1886', 'Evelyn Stetser']]
+                    ],
+                    notes: ['Remembered in the family as the brother of J. Paul Lyet II; one index instead names his parents as Henri William Lyet & Evelyn Stetser. His death at a VA Medical Center indicates military service — a lead for records.']
+                },
+                {
+                    id: 'jpl2',
+                    n: 'J. Paul Lyet II', d: '1917 – 1984', pl: 'Philadelphia → Lancaster',
+                    b: 'Chairman & CEO of Sperry Corporation', flag: 'Parents unverified',
+                    facts: [
+                        ['Born', '6 May 1917, Philadelphia'],
+                        ['Died', '7 June 1984, New York'],
+                        ['Education', 'Wharton Evening School of Accounts & Finance, University of Pennsylvania, Class of 1941']
+                    ],
+                    rels: [
+                        ['Parents (Indexed)', ['@louis-ferdinand', 'Elizabeth Catherine Fortune']],
+                        ['Spouse', ['@dorothy', 'm. 29 September 1945']],
+                        ['Children', ['@juliette', '@victor', '@teddy', 'and two of the living generation']],
+                        ['Brother', ['@henri-1912']]
+                    ],
+                    notes: [
+                        'His parents remain the open question of the tree — indexed as Louis Ferdinand Lyet and Elizabeth Catherine Fortune, but described in the Horatio Alger biography as a French-immigrant trumpet player and a telephone operator. The 1920 and 1930 Philadelphia census should settle it.',
+                        'Grew up poor in north Philadelphia after his parents divorced when he was eight; factory work and real-estate sales paid his way through Wharton’s evening program. He became a CPA at Ernst & Ernst, then comptroller of the New Holland Machine Company — the move that brought him to Lancaster in 1945. Sperry acquired the firm a year later.',
+                        'At Sperry: executive vice president in 1970, president in 1971, chairman and chief executive from 1972 until retiring in 1982. Revenues tripled from $1.8 to $5.6 billion in his decade at the top. He chaired the President’s Export Council under Presidents Carter and Reagan, sat on the boards of Eastman Kodak, Eli Lilly, Consolidated Edison, Armstrong World Industries, NL Industries, and the Hershey Trust, and received the Horatio Alger Award in 1983.'
+                    ],
+                    links: [
+                        { t: 'Hagley Museum & Library — Sperry film collection', u: 'https://digital.hagley.org/islandora/object/islandora%3A2578820' }
+                    ],
+                    videos: [
+                        { yt: 'h3e8Nqefx8M', t: 'Computer History Archives Project' },
+                        { yt: '_5TNVD_RiZs', t: 'Reagan Library — President’s Export Council' },
+                        { mp4: 'https://digital.hagley.org/islandora/object/islandora%3A2578820/datastream/MP4/view', t: 'Sperry Commercial (1979)', sub: 'Chairman J. Paul Lyet on the importance of listening' }
+                    ]
+                },
+                {
+                    id: 'dorothy',
+                    n: 'Dorothy L. (Storz) Lyet', d: 'd. 2013', pl: 'Philadelphia → Lancaster',
+                    b: 'Matriarch of the Lancaster family',
+                    facts: [
+                        ['Died', '2 November 2013'],
+                        ['Parents', 'Frederick & Jenny (Hoffman) Storz'],
+                        ['Education', 'Overbrook High School, Philadelphia']
+                    ],
+                    rels: [
+                        ['Spouse', ['@jpl2', 'm. 29 September 1945']],
+                        ['Children', ['@juliette', '@victor', '@teddy', 'and two of the living generation']]
+                    ],
+                    notes: ['A Philadelphia native who moved to Lancaster in 1945. Family records also place part of her upbringing in Pleidelsheim, Germany — a detail still to be reconciled with her Philadelphia records.']
+                },
+                {
+                    id: 'juliette',
+                    n: 'Juliette (Lyet) Summy', d: 'd. 2022', pl: 'Lancaster',
+                    b: 'Daughter of J. Paul Lyet II and Dorothy',
+                    facts: [
+                        ['Spouse', 'Jay Summy']
+                    ],
+                    rels: [
+                        ['Parents', ['@jpl2', '@dorothy']]
+                    ]
+                },
+                {
+                    id: 'victor',
+                    n: 'Victor Philippe Lyet', d: '1948 – 2026', pl: 'Lancaster',
+                    b: 'More than twenty years at Ephrata Area Rehab Services',
+                    facts: [
+                        ['Born', '1948, Lancaster, Pennsylvania'],
+                        ['Died', '10 February 2026, Millersville, Pennsylvania']
+                    ],
+                    rels: [
+                        ['Parents', ['@jpl2', '@dorothy']]
+                    ]
+                },
+                {
+                    id: 'teddy',
+                    n: 'Theodor Pierre “Teddy” Lyet', d: 'c. 1951 – 2026', pl: 'Lancaster',
+                    b: 'More than twenty-five years at Ephrata Area Rehab Services',
+                    facts: [
+                        ['Born', 'About 1951, Lancaster, Pennsylvania'],
+                        ['Died', '19 January 2026, Lancaster, Pennsylvania']
+                    ],
+                    rels: [
+                        ['Parents', ['@jpl2', '@dorothy']]
+                    ]
+                }
+            ],
+            'England & Scotland': [
+                {
+                    n: 'Elizabeth Lyet', d: '1592 – 1688', pl: 'Manston → Dorchester',
+                    b: 'The earliest record of the spelling anywhere', flag: 'Likely unrelated line',
+                    facts: [
+                        ['Born', '1592, Manston, Dorset'],
+                        ['Died', '1688, Dorchester, Dorset']
+                    ],
+                    notes: ['Ninety-six years in seventeenth-century Dorset. Long taken as the earliest record of the name, the English thread is now believed to be a coincidental spelling unrelated to the French family. One index names her parents as Robert Howlett & Elizabeth Quenton — a surname mismatch that itself needs explaining.']
+                },
+                {
+                    n: 'Elizabeth Lyet', d: '1688 – 1759', pl: 'Exeter → Chawleigh',
+                    b: 'The Devon thread of the English spelling',
+                    facts: [
+                        ['Born', '12 January 1688, Exeter, Devon'],
+                        ['Died', '15 September 1759, Chawleigh, Devon']
+                    ]
+                },
+                {
+                    n: 'Christian Lyet', d: 'b. c. 1700', pl: 'Scotland',
+                    b: 'A sparse Scottish record of the name',
+                    facts: [
+                        ['Born', 'About 1700, Scotland']
+                    ]
+                }
+            ]
+        };
+
+        const peopleTabs = document.getElementById('peopleTabs');
+        const peopleGrid = document.getElementById('peopleGrid');
+        const personModal = document.getElementById('personModal');
+        const dossierName = document.getElementById('dossierName');
+        const dossierBody = document.getElementById('dossierBody');
+
+        const PEOPLE_BY_ID = {};
+        Object.values(PEOPLE).forEach((list) =>
+            list.forEach((p) => { if (p.id) PEOPLE_BY_ID[p.id] = p; }));
+
+        function openPerson(p) {
+            dossierName.textContent = p.n;
+            dossierBody.innerHTML = '';
+
+            const dates = document.createElement('div');
+            dates.className = 'dossier-dates';
+            dates.textContent = p.d + (p.pl ? '  ·  ' + p.pl : '');
+            dossierBody.appendChild(dates);
+
+            if (p.flag) {
+                const f = document.createElement('span');
+                f.className = 'd-flag';
+                f.textContent = p.flag;
+                dossierBody.appendChild(f);
+            }
+
+            if ((p.facts && p.facts.length) || (p.rels && p.rels.length)) {
+                const dl = document.createElement('dl');
+                (p.facts || []).forEach(([k, v]) => {
+                    const dt = document.createElement('dt');
+                    dt.textContent = k;
+                    const dd = document.createElement('dd');
+                    dd.textContent = v;
+                    dl.appendChild(dt);
+                    dl.appendChild(dd);
+                });
+                // relationship rows: '@id' items become links that swap the dossier
+                (p.rels || []).forEach(([k, items]) => {
+                    const dt = document.createElement('dt');
+                    dt.textContent = k;
+                    const dd = document.createElement('dd');
+                    items.forEach((item, i) => {
+                        if (i > 0) dd.appendChild(document.createTextNode(', '));
+                        const target = item.charAt(0) === '@' ? PEOPLE_BY_ID[item.slice(1)] : null;
+                        if (target) {
+                            const b = document.createElement('a');
+                            b.href = '#';
+                            b.className = 'p-link';
+                            b.textContent = target.n;
+                            b.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                openPerson(target);
+                            });
+                            dd.appendChild(b);
+                        } else {
+                            dd.appendChild(document.createTextNode(item.charAt(0) === '@' ? item.slice(1) : item));
+                        }
+                    });
+                    dl.appendChild(dt);
+                    dl.appendChild(dd);
+                });
+                dossierBody.appendChild(dl);
+            }
+
+            (p.notes || []).forEach((t) => {
+                const para = document.createElement('p');
+                para.textContent = t;
+                dossierBody.appendChild(para);
+            });
+
+            if (p.videos && p.videos.length) {
+                const vids = document.createElement('div');
+                vids.className = 'd-videos';
+                p.videos.forEach((v) => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    if (v.yt) {
+                        const f = document.createElement('iframe');
+                        f.src = 'https://www.youtube.com/embed/' + v.yt;
+                        f.title = v.t;
+                        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        f.allowFullscreen = true;
+                        card.appendChild(f);
+                    } else {
+                        const vid = document.createElement('video');
+                        vid.controls = true;
+                        const src = document.createElement('source');
+                        src.src = v.mp4;
+                        src.type = 'video/mp4';
+                        vid.appendChild(src);
+                        card.appendChild(vid);
+                    }
+                    if (v.t) {
+                        const cap = document.createElement('div');
+                        cap.className = 'caption';
+                        cap.textContent = v.t;
+                        if (v.sub) {
+                            const sub = document.createElement('div');
+                            sub.className = 'sub';
+                            sub.textContent = v.sub;
+                            cap.appendChild(sub);
+                        }
+                        card.appendChild(cap);
+                    }
+                    vids.appendChild(card);
+                });
+                dossierBody.appendChild(vids);
+            }
+
+            if (p.links && p.links.length) {
+                const wrap = document.createElement('div');
+                wrap.className = 'd-links';
+                p.links.forEach((l) => {
+                    const a = document.createElement('a');
+                    a.href = l.u;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.innerHTML = '<span></span><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>';
+                    a.querySelector('span').textContent = l.t;
+                    wrap.appendChild(a);
+                });
+                dossierBody.appendChild(wrap);
+            }
+
+            openModal(personModal);
+            personModal.querySelector('.modal-panel').scrollTop = 0;
+        }
+
+        function selectPeopleGroup(group) {
+            peopleTabs.querySelectorAll('.loc-tab').forEach((el) =>
+                el.classList.toggle('active', el.dataset.group === group));
+            peopleGrid.innerHTML = '';
+            PEOPLE[group].forEach((p) => {
+                const card = document.createElement('button');
+                card.className = 'pcard';
+                card.innerHTML = '<span class="pc-name"></span><div class="pc-dates"></div><div class="pc-blurb"></div><span class="material-symbols-outlined" aria-hidden="true">open_in_full</span>';
+                card.querySelector('.pc-name').textContent = p.n;
+                card.querySelector('.pc-dates').textContent = p.d + (p.pl ? '  ·  ' + p.pl : '');
+                card.querySelector('.pc-blurb').textContent = p.b || '';
+                card.addEventListener('click', () => openPerson(p));
+                peopleGrid.appendChild(card);
+            });
+        }
+
+        Object.keys(PEOPLE).forEach((group) => {
+            const tab = document.createElement('button');
+            tab.className = 'loc-tab';
+            tab.dataset.group = group;
+            tab.innerHTML = group + ' <span class="count">' + PEOPLE[group].length + '</span>';
+            tab.addEventListener('click', () => selectPeopleGroup(group));
+            peopleTabs.appendChild(tab);
+        });
+        selectPeopleGroup('France');
 
         // ---------- Locations explorer ----------
         const MAPS_KEY = 'AIzaSyBfID7eiCKNY3tpfgXOTseIEkQEfIYNn-Q';
@@ -1601,7 +2321,18 @@
                 locList.appendChild(btn);
             });
             selectPlace(LOCATIONS[country][0], locList.querySelector('.loc-item'));
+            locList.scrollLeft = 0;
+            locScroll.classList.remove('at-end');
+            locScroll.classList.toggle('no-scroll', locList.scrollWidth <= locList.clientWidth + 4);
         }
+
+        // scroll affordance for the mobile location strip
+        const locScroll = document.getElementById('locScroll');
+        locList.addEventListener('scroll', () => {
+            locScroll.classList.add('scrolled');
+            locScroll.classList.toggle('at-end',
+                locList.scrollLeft + locList.clientWidth >= locList.scrollWidth - 8);
+        }, { passive: true });
 
         Object.keys(LOCATIONS).forEach((country) => {
             const tab = document.createElement('button');
